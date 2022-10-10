@@ -1,0 +1,9 @@
+<div class="flex flex-wrap justify-center items-center">
+  <app-product-item
+    *ngFor="let product of data"
+    [id]="product.id"
+    [imagePath]="product.imagePath"
+    [name]="product.name"
+    [price]="product.price"
+  ></app-product-item>
+</div>
