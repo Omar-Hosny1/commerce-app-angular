@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/Authentication.service';
 
 @Component({
   selector: 'app-product-item',
@@ -12,10 +13,19 @@ export class ProductItemComponent implements OnInit {
   @Input() imagePath?: string;
   @Input() price?: number;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private authService: AuthenticationService
+  ) {}
 
   logTheID() {
-    console.log(this.id);
+    if (!this.authService.isLoggedIn) {
+      // alert('YOU NEED TO LOGIN FIRST');
+      this.router.navigate(['auth']);
+    } else {
+      alert('ADDED 👌');
+    }
   }
   ngOnInit(): void {}
   toDetailsPage() {

@@ -3,3 +3,7 @@
   padding: 5px 10px;
   border-radius: 5px;
 }
+.logo {
+  @apply font-bold uppercase cursor-pointer text-white text-[30px] tracking-widest font-serif mt-[10px];
+  /* text-primary */
+}

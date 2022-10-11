@@ -1,11 +1,7 @@
 <div
   class="bg-slate-800 w-full h-10 flex justify-between items-center px-56 py-7 xl:px-20"
 >
-  <h1
-    class="font-bold uppercase cursor-pointer text-white text-lg tracking-widest font-serif"
-  >
-    LOGO
-  </h1>
+  <h1 class="logo">LOGO</h1>
   <ul class="flex justify-between items-center">
     <li
       class="mx-4 text-white duration-300"
@@ -21,7 +17,18 @@
       <a class="cursor-pointer uppercase">Categories</a>
     </li>
   </ul>
-  <button class="uppercase bg-white text-slate-800 rounded-md px-3 py-1">
+  <button
+    (click)="signOut()"
+    *ngIf="isAuthenticated"
+    class="uppercase bg-white text-slate-800 rounded-md px-3 py-1"
+  >
+    Sign Out
+  </button>
+  <button
+    (click)="logIn()"
+    *ngIf="!isAuthenticated"
+    class="uppercase bg-white text-slate-800 rounded-md px-3 py-1"
+  >
     Login
   </button>
 </div>

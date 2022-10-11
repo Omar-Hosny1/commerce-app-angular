@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthenticationComponent } from './authentication/authentication.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailsComponent } from './shop/products/product-details/product-details.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
     path: 'shop',
     component: ShopComponent,
   },
+  { path: 'auth', component: AuthenticationComponent },
   { path: 'shop/:id', component: ProductDetailsComponent },
   { path: 'not-found', component: PageNotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
