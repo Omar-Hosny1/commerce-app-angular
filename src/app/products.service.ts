@@ -8,7 +8,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product2.jpg'
+      '../assets/images/product2.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -16,7 +17,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product1.jpg'
+      '../assets/images/product1.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -24,7 +26,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product3.jpg'
+      '../assets/images/product3.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -32,7 +35,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product4.jpg'
+      '../assets/images/product4.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -40,7 +44,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product4.jpg'
+      '../assets/images/product4.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -48,7 +53,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product1.jpg'
+      '../assets/images/product1.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -56,7 +62,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product7.jpg'
+      '../assets/images/product7.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -64,7 +71,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product8.jpg'
+      '../assets/images/product8.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -72,7 +80,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product2.jpg'
+      '../assets/images/product2.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -80,7 +89,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product1.jpg'
+      '../assets/images/product1.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -88,7 +98,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product3.jpg'
+      '../assets/images/product3.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -96,7 +107,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product4.jpg'
+      '../assets/images/product4.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -104,7 +116,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product4.jpg'
+      '../assets/images/product4.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -112,7 +125,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product1.jpg'
+      '../assets/images/product1.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -120,7 +134,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product7.jpg'
+      '../assets/images/product7.jpg',
+      0
     ),
     new Product(
       'Shirt',
@@ -128,7 +143,8 @@ export class ProductsService {
       54,
       'Ok',
       'This is shirt',
-      '../assets/images/product8.jpg'
+      '../assets/images/product8.jpg',
+      0
     ),
   ];
   getAllData() {

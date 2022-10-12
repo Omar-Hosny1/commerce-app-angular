@@ -14,7 +14,7 @@ import { ProductsService } from './products.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { AuthGuradService } from './AuthGuradService.service';
-
+import { CardService } from './Card.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,12 @@ import { AuthGuradService } from './AuthGuradService.service';
     AuthenticationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [ProductsService, AuthenticationService, AuthGuradService],
+  providers: [
+    ProductsService,
+    AuthenticationService,
+    AuthGuradService,
+    CardService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

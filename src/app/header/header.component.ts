@@ -7,20 +7,20 @@ import { AuthenticationService } from '../Authentication.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private authService: AuthenticationService) {}
   isAuthenticated?: boolean = false;
-  ngOnInit(): void {}
 
-  signOut() {
-    this.authService.signOut();
+  constructor(private authService: AuthenticationService) {}
+
+  ngOnInit(): void {
     this.authService.loggedInUpdated.subscribe(
       (isAuth: boolean) => (this.isAuthenticated = isAuth)
     );
   }
+
+  signOut() {
+    this.authService.signOut();
+  }
   logIn() {
     this.authService.logIn();
-    this.authService.loggedInUpdated.subscribe(
-      (isAuth: boolean) => (this.isAuthenticated = isAuth)
-    );
   }
 }
