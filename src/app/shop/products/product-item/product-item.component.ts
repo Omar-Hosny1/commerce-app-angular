@@ -3,6 +3,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/Authentication.service';
 import { CartService } from 'src/app/Cart.service';
 import { Product } from './product.model';
+import { faFilm, faAdd } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-product-item',
@@ -11,6 +12,8 @@ import { Product } from './product.model';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product: Product;
+  faFilm = faFilm;
+  faAdd = faAdd;
   constructor(
     private router: Router,
     private route: ActivatedRoute,

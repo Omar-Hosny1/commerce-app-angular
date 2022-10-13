@@ -1,0 +1,12 @@
+.pd-animation {
+  animation: pd 1s ease;
+  position: relative;
+}
+@keyframes pd {
+  0% {
+    left: 20px;
+  }
+  100% {
+    left: 0px;
+  }
+}

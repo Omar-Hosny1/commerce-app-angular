@@ -17,6 +17,8 @@ import { AuthGuradService } from './AuthGuradService.service';
 import { CartService } from './Cart.service';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,7 @@ import { CartItemComponent } from './cart/cart-item/cart-item.component';
     CartComponent,
     CartItemComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [
     ProductsService,
     AuthenticationService,
