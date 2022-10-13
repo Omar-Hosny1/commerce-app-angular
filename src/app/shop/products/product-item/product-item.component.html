@@ -1,13 +1,13 @@
 <div
   class="m-2 mx-5 border-solid border-black flex items-center justify-center flex-col w-80 bg-slate-300 rounded-md p-5"
 >
-  <img [src]="imagePath" [alt]="name" class="w-40 rounded-sm" />
-  <p>This Item Has The Id : {{ id }}</p>
-  <p>This Item Has The name : {{ name }}</p>
-  <p>This Item Has The price : {{ price }}</p>
+  <img [src]="product.imagePath" [alt]="product.name" class="w-40 rounded-sm" />
+  <p>This Item Has The Id : {{ product.id }}</p>
+  <p>This Item Has The name : {{ product.name }}</p>
+  <p>This Item Has The price : {{ product.price }}</p>
   <div class="flex">
     <button
-      (click)="logTheID()"
+      (click)="onAddToCart()"
       class="bg-slate-900 p-2 rounded-md text-white mt-2"
     >
       Add To Cart

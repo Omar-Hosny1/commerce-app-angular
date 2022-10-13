@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/Authentication.service';
+import { CartService } from 'src/app/Cart.service';
+import { Product } from './product.model';
 
 @Component({
   selector: 'app-product-item',
@@ -8,27 +10,24 @@ import { AuthenticationService } from 'src/app/Authentication.service';
   styleUrls: ['./product-item.component.css'],
 })
 export class ProductItemComponent implements OnInit {
-  @Input() id!: number;
-  @Input() name?: string;
-  @Input() imagePath?: string;
-  @Input() price?: number;
-
+  @Input() product: Product;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private cartService: CartService
   ) {}
 
-  logTheID() {
+  onAddToCart() {
     if (!this.authService.isLoggedIn) {
-      // alert('YOU NEED TO LOGIN FIRST');
+      alert('YOU NEED TO LOGIN FIRST');
       this.router.navigate(['auth']);
     } else {
-      alert('ADDED 👌');
+      this.cartService.addToCard(this.product);
     }
   }
   ngOnInit(): void {}
   toDetailsPage() {
-    this.router.navigate([this.id], { relativeTo: this.route });
+    this.router.navigate([this.product.id], { relativeTo: this.route });
   }
 }

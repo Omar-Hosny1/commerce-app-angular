@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../Authentication.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { AuthenticationService } from '../Authentication.service';
 export class HeaderComponent implements OnInit {
   isAuthenticated?: boolean = false;
 
-  constructor(private authService: AuthenticationService) {}
+  constructor(
+    private authService: AuthenticationService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.authService.loggedInUpdated.subscribe(
@@ -22,5 +26,6 @@ export class HeaderComponent implements OnInit {
   }
   logIn() {
     this.authService.logIn();
+    // console.log(this.route.toString());
   }
 }

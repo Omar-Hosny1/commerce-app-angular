@@ -14,7 +14,9 @@ import { ProductsService } from './products.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { AuthGuradService } from './AuthGuradService.service';
-import { CardService } from './Card.service';
+import { CartService } from './Cart.service';
+import { CartComponent } from './cart/cart.component';
+import { CartItemComponent } from './cart/cart-item/cart-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,13 +28,15 @@ import { CardService } from './Card.service';
     ProductDetailsComponent,
     PageNotFoundComponent,
     AuthenticationComponent,
+    CartComponent,
+    CartItemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [
     ProductsService,
     AuthenticationService,
     AuthGuradService,
-    CardService,
+    CartService,
   ],
   bootstrap: [AppComponent],
 })

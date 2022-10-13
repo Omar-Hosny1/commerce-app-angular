@@ -1,0 +1,22 @@
+<div class="bg-slate-300 rounded-md w-[300px] text-center text-white m-2">
+  <img [src]="item.imagePath" class="w-20" />
+  <p>This is your ID : {{ item.id }}</p>
+  <p>This is your NAME : {{ item.name }}</p>
+  <p>This is your PRICE : {{ item.price }}</p>
+  <p>This is your DESCRIPTION : {{ item.description }}</p>
+  <p>This is your QUANTITY : {{ item.quantity }}</p>
+  <div class="flex">
+    <button
+      (click)="onAddOne()"
+      class="bg-slate-700 text-white p-2 rounded-md mr-2"
+    >
+      ADD ONE
+    </button>
+    <button
+      (click)="onRemoveOne()"
+      class="bg-slate-700 text-white p-2 rounded-md"
+    >
+      REMOVE ONE
+    </button>
+  </div>
+</div>

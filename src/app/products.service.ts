@@ -4,147 +4,147 @@ export class ProductsService {
   products: Product[] = [
     new Product(
       'Shirt',
-      1,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product2.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      2,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product1.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      2,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product3.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      2,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product4.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      4,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product4.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      5,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product1.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      6,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product7.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      7,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product8.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      1,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product2.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      2,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product1.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      2,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product3.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      2,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product4.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      4,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product4.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      5,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product1.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      6,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product7.jpg',
-      0
+      1
     ),
     new Product(
       'Shirt',
-      7,
+      Math.random(),
       54,
       'Ok',
       'This is shirt',
       '../assets/images/product8.jpg',
-      0
+      1
     ),
   ];
   getAllData() {
