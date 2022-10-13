@@ -18,6 +18,7 @@ import { CartService } from './Cart.service';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DataSourcesService } from './dataSrcs.service';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AuthenticationService,
     AuthGuradService,
     CartService,
+    DataSourcesService,
   ],
   bootstrap: [AppComponent],
 })

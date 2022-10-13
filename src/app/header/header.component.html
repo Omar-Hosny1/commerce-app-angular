@@ -1,36 +1,36 @@
 <div
-  class="bg-slate-800 w-full h-10 flex justify-between items-center px-56 py-7 xl:px-20"
+  class="bg-main w-full h-10 flex justify-between items-center px-56 py-7 xl:px-20"
 >
-  <h1 class="logo">LOGO</h1>
+  <h1 class="logo">LUCAS.</h1>
   <ul class="flex justify-between items-center">
     <li
-      class="mx-4 text-white duration-300"
+      class="mx-4 text-primary duration-300 link-hover"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
     >
-      <a class="cursor-pointer uppercase" routerLink="">Home</a>
+      <a class="cursor-pointer uppercase relative" routerLink="">Home</a>
     </li>
-    <li class="mx-4 text-white duration-300" routerLinkActive="active">
+    <li class="mx-4 text-primary duration-300" routerLinkActive="active">
       <a class="cursor-pointer uppercase" routerLink="shop">Shop</a>
     </li>
-    <li class="mx-4 text-white duration-300" routerLinkActive="active">
+    <li class="mx-4 text-primary duration-300" routerLinkActive="active">
       <a class="cursor-pointer uppercase">Categories</a>
     </li>
-    <li class="mx-4 text-white duration-300" routerLinkActive="active">
+    <li class="mx-4 text-primary duration-300" routerLinkActive="active">
       <a class="cursor-pointer uppercase" routerLink="cart">Cart</a>
     </li>
   </ul>
   <button
     (click)="signOut()"
     *ngIf="isAuthenticated"
-    class="uppercase bg-white text-slate-800 rounded-md px-3 py-1"
+    class="uppercase bg-primary text-main rounded-md px-3 py-1"
   >
     Sign Out
   </button>
   <button
     (click)="logIn()"
     *ngIf="!isAuthenticated"
-    class="uppercase bg-white text-slate-800 rounded-md px-3 py-1"
+    class="uppercase bg-primary text-main rounded-md px-3 py-1"
   >
     Login
   </button>
