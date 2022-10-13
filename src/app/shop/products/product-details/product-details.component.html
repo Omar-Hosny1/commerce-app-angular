@@ -1,1 +1,13 @@
-<p>product-details works!</p>
+<div class="flex items-center justify-center m-5 h-[500px]">
+  <img
+    [src]="productData.imagePath"
+    alt="{{ productData.name }}"
+    class="w-40 h-40"
+  />
+  <div class="flex flex-col items-center justify-center ml-[15px]">
+    <p>This Item Has The Id : {{ productData.id }}</p>
+    <p>This Item Has The name : {{ productData.name }}</p>
+    <p>This Item Has The price : {{ productData.price }}</p>
+    <p>This is the desc : {{ productData.description }}</p>
+  </div>
+</div>

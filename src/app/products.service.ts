@@ -150,4 +150,13 @@ export class ProductsService {
   getAllData() {
     return this.products;
   }
+  getItem(id: number) {
+    for (let i = 0; i < this.products.length; i++) {
+      const element = this.products[i];
+      if (element.id == id) {
+        return element;
+      }
+    }
+    return this.products[5];
+  }
 }
