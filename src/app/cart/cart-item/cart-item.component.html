@@ -1,4 +1,4 @@
-<div class="bg-slate-300 rounded-md w-[300px] text-center text-white m-2">
+<!-- <div class="bg-slate-300 rounded-md w-[300px] text-center text-white m-2">
   <img [src]="item.imagePath" class="w-20" />
   <p>This is your ID : {{ item.id }}</p>
   <p>This is your NAME : {{ item.name }}</p>
@@ -18,5 +18,33 @@
     >
       REMOVE ONE
     </button>
+  </div>
+</div> -->
+
+<div class="cart-item">
+  <img [src]="item.imagePath" class="cart-item-img" />
+  <div class="cart-item-det">
+    <div class="cart-item-title">
+      <span class="product-name">
+        <strong>Product Name :</strong> {{ item.name }}
+      </span>
+      <span class="product-price">
+        <strong>Product PRICE :</strong> {{ item.price }} $
+      </span>
+    </div>
+    <div class="cart-item-title-quantity">
+      <span class="product-quantity">
+        <strong>Product QUANTITY :</strong> {{ item.quantity }}
+      </span>
+    </div>
+    <div class="cart-item-btns">
+      <button (click)="onAddOne()">+</button>
+      <button (click)="onRemoveOne()">-</button>
+    </div>
+    <fa-icon
+      class="cart-item-icon"
+      [icon]="faClose"
+      (click)="onDeleteItem()"
+    ></fa-icon>
   </div>
 </div>

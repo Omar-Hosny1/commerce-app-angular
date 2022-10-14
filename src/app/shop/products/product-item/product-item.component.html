@@ -1,22 +1,27 @@
 <div
-  class="mt-5 mx-5 border-solid border-black flex items-center justify-center flex-col w-80 bg-main rounded-md p-5"
+  class="m-3 p-2 border-2 duration-150 hover:border-2 hover:border-black hover:border-solid"
 >
-  <img [src]="product.imagePath" [alt]="product.name" class="w-40 rounded-sm" />
-  <p>This Item Has The Id : {{ product.id }}</p>
-  <p>This Item Has The name : {{ product.name }}</p>
-  <p>This Item Has The price : {{ product.price }}</p>
-  <div class="flex">
-    <button
-      (click)="onAddToCart()"
-      class="bg-slate-900 p-2 rounded-md text-white mt-2"
-    >
-      Add To Cart <fa-icon [icon]="faAdd"></fa-icon>
-    </button>
-    <button
-      class="bg-slate-900 p-2 rounded-md text-white mt-2 mx-1"
-      (click)="toDetailsPage()"
-    >
-      Details <fa-icon [icon]="faFilm"></fa-icon>
-    </button>
+  <span class="absolute m-2 bg-green-700 text-white px-2 py-1 rounded-md"
+    >NEW</span
+  >
+  <img [src]="product.imagePath" [alt]="product.name" class="w-[300px]" />
+  <span class="block text-sm text-gray-500">{{ product.categoryType }}</span>
+  <span class="block text-lg uppercase">{{ product.name }}</span>
+  <div class="flex items-center justify-between relative bottom-[5px]">
+    <span class="text-gray-700">PRICE: {{ product.price }}$</span>
+    <div class="">
+      <button
+        (click)="onAddToCart()"
+        class="mr-[7px] p-[5px] rounded-md bg-gray-400 text-white"
+      >
+        <fa-icon [icon]="faShoppingCart"></fa-icon>
+      </button>
+      <button
+        class="p-[5px] rounded-md bg-gray-400 text-white"
+        (click)="toDetailsPage()"
+      >
+        <fa-icon [icon]="faArrowAltCircleLeft"></fa-icon>
+      </button>
+    </div>
   </div>
 </div>

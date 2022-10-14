@@ -1,27 +1,49 @@
-<div class="flex mt-10">
-  <div
-    class="flex justify-center items-center flex-wrap mx-5 w-[1200px]"
-    *ngIf="cartItems.length"
-  >
-    <app-cart-item *ngFor="let item of cartItems" [item]="item"></app-cart-item>
+<div class="cart-components-height">
+  <div class="cart-components-details">
+    <h1 class="cart-com-title">YOUR BAG</h1>
+    <span class="cart-com-total-amount">
+      <strong>Total Quantity :</strong> {{ cartInfo.totalQuantity }}
+    </span>
+    <span class="cart-com-total-price">
+      <strong>Total Price :</strong> {{ cartInfo.totalPrice }}$
+    </span>
   </div>
-  <div
-    class="flex justify-center items-center w-[1200px] flex-col text-center"
-    *ngIf="!cartItems.length"
-  >
-    <p class="mb-5">NO ITEMS YET</p>
-    <button
-      (click)="onGoToShopPage()"
-      class="bg-slate-600 text-white p-2 rounded-md w-fit"
-    >
-      GO TO SHOPPING
-    </button>
-  </div>
-  <div
-    class="flex justify-center items-center bg-slate-600 text-white flex-col p-5 rounded-lg"
-  >
-    <p>TOTAL ITEMS : {{ cartInfo.totalItems }}</p>
-    <p>TOTAL QUANTITY : {{ cartInfo.totalQuantity }}</p>
-    <p>TOTAL PRICE : {{ cartInfo.totalPrice }} $</p>
+  <div class="cart-components">
+    <div class="items-section">
+      <p id="no-items-found" *ngIf="!cartItems.length">NO ITEMS FOUND</p>
+      <div *ngIf="cartItems.length">
+        <app-cart-item
+          *ngFor="let item of cartItems"
+          [item]="item"
+        ></app-cart-item>
+      </div>
+    </div>
+    <div class="order-section">
+      <button class="check-out" (click)="onCheckOut()">CHECK OUT</button>
+      <div class="order-summary">
+        <h1>Order Summary</h1>
+        <div class="total-items">
+          <span>
+            <strong>
+              {{ cartItems.length > 1 ? " ITEMS" : "ITEM" }}
+            </strong>
+          </span>
+          <span>{{ cartItems.length }} </span>
+        </div>
+        <div class="total-price">
+          <span>
+            <strong>Total Amount</strong>
+          </span>
+          <span>{{ cartInfo.totalQuantity }}</span>
+        </div>
+        <div class="total-price">
+          <span>
+            <strong>Total Price</strong>
+          </span>
+          <span>{{ cartInfo.totalPrice }}$</span>
+        </div>
+        <button class="cancel" (click)="onReset()">CANCEL</button>
+      </div>
+    </div>
   </div>
 </div>

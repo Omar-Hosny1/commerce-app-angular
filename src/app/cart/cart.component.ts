@@ -23,4 +23,10 @@ export class CartComponent implements OnInit {
   onGoToShopPage() {
     this.router.navigate(['shop']);
   }
+  onCheckOut() {
+    this.cartService.checkOutCart();
+  }
+  onReset() {
+    this.cartService.resetCart();
+  }
 }

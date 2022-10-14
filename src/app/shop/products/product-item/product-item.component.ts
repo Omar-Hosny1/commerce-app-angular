@@ -3,7 +3,10 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/Authentication.service';
 import { CartService } from 'src/app/Cart.service';
 import { Product } from './product.model';
-import { faFilm, faAdd } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowAltCircleRight,
+  faShoppingCart,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-product-item',
@@ -12,8 +15,8 @@ import { faFilm, faAdd } from '@fortawesome/free-solid-svg-icons';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product: Product;
-  faFilm = faFilm;
-  faAdd = faAdd;
+  faArrowAltCircleLeft = faArrowAltCircleRight;
+  faShoppingCart = faShoppingCart;
   constructor(
     private router: Router,
     private route: ActivatedRoute,

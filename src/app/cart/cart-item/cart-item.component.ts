@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from 'src/app/Cart.service';
 import { Product } from 'src/app/shop/products/product-item/product.model';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cart-item',
@@ -8,15 +9,8 @@ import { Product } from 'src/app/shop/products/product-item/product.model';
   styleUrls: ['./cart-item.component.css'],
 })
 export class CartItemComponent implements OnInit {
-  // @Input() name: string;
-  // @Input() id: number;
-  // @Input() price: number;
-  // @Input() categoryType: string;
-  // @Input() description: string;
-  // @Input() imagePath: string;
-  // @Input() quantity: number;
   @Input() item: Product;
-
+  faClose = faClose;
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {}
@@ -28,7 +22,10 @@ export class CartItemComponent implements OnInit {
   onRemoveOne() {
     this.cartService.subOnefromTheQuantity(this.item);
   }
-  onDeleteItem() {
+  onRemoveItem() {
     this.cartService.removeFromCart(this.item);
+  }
+  onDeleteItem() {
+    this.cartService.deleteItem(this.item);
   }
 }

@@ -1,37 +1,34 @@
-<div
-  class="bg-main w-full h-10 flex justify-between items-center px-56 py-7 xl:px-20"
->
-  <h1 class="logo">LUCAS.</h1>
-  <ul class="flex justify-between items-center">
+<div class="nav shadow-sm bg-slate-100">
+  <div (click)="showMenu = true" class="bars">
+    <fa-icon [icon]="faBars" class=""></fa-icon>
+  </div>
+  <h1 class="font-bold tracking-wider">LUCAS</h1>
+
+  <ul [ngClass]="{ open: showMenu }" class="">
+    <li (click)="showMenu = false" class="close-icon">
+      <fa-icon [icon]="faClose" class=""></fa-icon>
+    </li>
     <li
-      class="mx-4 text-primary duration-300 link-hover"
+      class=""
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
     >
-      <a class="cursor-pointer uppercase relative" routerLink="">Home</a>
+      <a class="" routerLink="" (click)="showMenu = false">Home</a>
     </li>
-    <li class="mx-4 text-primary duration-300" routerLinkActive="active">
-      <a class="cursor-pointer uppercase" routerLink="shop">Shop</a>
+    <li class="" routerLinkActive="active" (click)="showMenu = false">
+      <a class="" routerLink="shop">Shop</a>
     </li>
-    <li class="mx-4 text-primary duration-300" routerLinkActive="active">
-      <a class="cursor-pointer uppercase">Categories</a>
+    <li class="" routerLinkActive="active" (click)="showMenu = false">
+      <a class="cursor-pointer">Categories</a>
     </li>
-    <li class="mx-4 text-primary duration-300" routerLinkActive="active">
-      <a class="cursor-pointer uppercase" routerLink="cart">Cart</a>
+    <li class="" routerLinkActive="active" (click)="showMenu = false">
+      <a class="" routerLink="cart">Cart</a>
     </li>
   </ul>
-  <button
-    (click)="signOut()"
-    *ngIf="isAuthenticated"
-    class="uppercase bg-primary text-main rounded-md px-3 py-1"
-  >
-    Sign Out
+  <button (click)="signOut()" *ngIf="isAuthenticated" class="text-2xl">
+    <fa-icon [icon]="faArrowAltCircleRight"></fa-icon>
   </button>
-  <button
-    (click)="logIn()"
-    *ngIf="!isAuthenticated"
-    class="uppercase bg-primary text-main rounded-md px-3 py-1"
-  >
-    Login
+  <button (click)="logIn()" *ngIf="!isAuthenticated" class="text-2xl">
+    <fa-icon [icon]="faUser"></fa-icon>
   </button>
 </div>

@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../Authentication.service';
+import {
+  faBars,
+  faClose,
+  faUser,
+  faArrowAltCircleRight,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +15,12 @@ import { AuthenticationService } from '../Authentication.service';
 })
 export class HeaderComponent implements OnInit {
   isAuthenticated?: boolean = false;
+  faBars = faBars;
+  faClose = faClose;
+  faUser = faUser;
+  faArrowAltCircleRight = faArrowAltCircleRight;
 
+  showMenu: boolean = false;
   constructor(
     private authService: AuthenticationService,
     private route: ActivatedRoute

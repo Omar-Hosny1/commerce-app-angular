@@ -45,6 +45,14 @@ export class CartService {
     alert('ADDED ✔');
   }
 
+  deleteItem(item: Product) {
+    this.cartInfo.totalItems--;
+    this.cartInfo.totalQuantity -= item.quantity;
+    this.cartInfo.totalPrice -= item.quantity * item.price;
+    this.cartItems = this.cartItems.filter((ele) => ele.id !== item.id);
+    this.cartItemsUpdated.emit(this.cartItems);
+  }
+
   removeFromCart(item: Product): void {
     this.cartItems = this.cartItems.filter((ele) => ele.id !== item.id);
     this.cartItemsUpdated.emit(this.cartItems);
@@ -78,5 +86,16 @@ export class CartService {
         }
       }
     }
+  }
+  resetCart() {
+    this.cartInfo.totalItems = 0;
+    this.cartInfo.totalPrice = 0;
+    this.cartInfo.totalQuantity = 0;
+    this.cartItems = [];
+    this.cartItemsUpdated.emit(this.cartItems);
+  }
+  checkOutCart() {
+    this.resetCart();
+    alert('Thank you for your order ❤');
   }
 }
