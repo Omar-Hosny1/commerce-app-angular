@@ -8,6 +8,7 @@ import { Product } from './product-item/product.model';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
+  filteredProducts = ""
   data: Product[] = [];
   constructor(private productsService: ProductsService) {}
 

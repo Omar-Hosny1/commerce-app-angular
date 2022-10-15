@@ -3,7 +3,7 @@ import { Product } from './shop/products/product-item/product.model';
 export class ProductsService {
   products: Product[] = [
     new Product(
-      'Good T-Shirt',
+      'AIr buds',
       Math.random(),
       54.75,
       'Shirts and Shoes',
@@ -30,7 +30,7 @@ export class ProductsService {
       1
     ),
     new Product(
-      'Good T-Shirt',
+      'Adidas Bottle',
       Math.random(),
       54.75,
       'Shirts and Shoes',

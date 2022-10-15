@@ -1,6 +1,16 @@
+<div class="search">
+  <label for="search" class="block uppercase">Search For Item</label>
+  <input
+    type="text"
+    id="search"
+    [(ngModel)]="filteredProducts"
+    class="w-3/12 h-8 mt-2 p-2 border-[1px] border-solid border-black rounded-md"
+  />
+  <hr class="my-3 bg-slate-400" />
+</div>
 <div class="flex flex-wrap justify-center items-center relative">
   <app-product-item
-    *ngFor="let product of data"
+    *ngFor="let product of data | filter: filteredProducts"
     [product]="product"
   ></app-product-item>
 </div>

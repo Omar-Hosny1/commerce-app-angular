@@ -1,65 +1,40 @@
 .active {
-  font-weight: bold;
-  letter-spacing: 1.3px;
+  @apply font-bold tracking-wider;
 }
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 85px;
-  background-color: aliceblue;
-  text-transform: uppercase;
+  @apply flex justify-between items-center py-[20px] px-[85px] bg-gray-300 uppercase;
 }
 ul {
-  display: flex;
+  @apply flex;
 }
 ul li {
-  margin: 0 10px;
-  position: relative;
+  @apply m-0 mx-[10px] relative;
 }
 
 .bars {
-  display: none;
-  cursor: pointer;
+  @apply hidden cursor-pointer;
 }
 .close-icon {
-  display: none;
+  @apply hidden;
 }
 @media (max-width: 450px) {
   .nav {
-    padding: 15px 30px;
+    @apply py-[15px] px-[30px];
   }
+
   ul {
-    order: -1;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    padding: 20px;
-    left: -500px;
-    transition: 0.3s;
+    @apply order-[-1] absolute flex flex-col bg-white w-full h-[100vh] top-0 left-[-500px] p-[20px] duration-300;
   }
   .bars {
-    display: block;
+    @apply block;
   }
   .close-icon {
-    position: absolute;
-    top: 0;
-    display: block;
-    padding: 10px 0;
-    cursor: pointer;
-    font-size: 20px;
+    @apply absolute top-0 block py-[10px] px-0 cursor-pointer text-[20px];
   }
   ul li {
-    margin: 12px 0;
+    @apply my-[12px] mx-0;
   }
   .open {
-    transition: 0.3s;
-    left: 0;
-    z-index: 5;
+    @apply duration-300 left-0 z-[5];
   }
 }
