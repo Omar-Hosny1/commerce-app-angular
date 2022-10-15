@@ -2,7 +2,17 @@ import { Product } from './shop/products/product-item/product.model';
 import { EventEmitter } from '@angular/core';
 export class CartService {
   cartItemsUpdated = new EventEmitter<Product[]>();
-  cartItems: Product[] = [];
+  cartItems: Product[] = [
+    new Product(
+      'Good T-Shirt',
+      Math.random(),
+      54.75,
+      'Shirts and Shoes',
+      'This is shirt',
+      '../assets/images/product1.jpg',
+      1
+    ),
+  ];
   cartInfo: { totalItems: number; totalQuantity: number; totalPrice: number } =
     {
       totalItems: 0,
