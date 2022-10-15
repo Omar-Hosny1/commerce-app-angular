@@ -1,5 +1,8 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
+import { CartService } from './Cart.service';
+@Injectable()
 export class AuthenticationService {
+  constructor(private cartService: CartService) {}
   isLoggedIn: boolean = false;
   loggedInUpdated = new EventEmitter<boolean>();
 
@@ -10,5 +13,6 @@ export class AuthenticationService {
   signOut() {
     this.loggedInUpdated.emit(false);
     this.isLoggedIn = false;
+    this.cartService.resetCart();
   }
 }

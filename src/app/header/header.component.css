@@ -3,7 +3,6 @@
   letter-spacing: 1.3px;
 }
 .nav {
-  /* z-index: 5; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,8 +26,8 @@ ul li {
   display: none;
 }
 @media (max-width: 450px) {
-  nav {
-    padding: 10px;
+  .nav {
+    padding: 15px 30px;
   }
   ul {
     order: -1;
@@ -61,5 +60,6 @@ ul li {
   .open {
     transition: 0.3s;
     left: 0;
+    z-index: 5;
   }
 }

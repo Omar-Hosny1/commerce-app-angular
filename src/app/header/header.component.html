@@ -25,10 +25,22 @@
       <a class="" routerLink="cart">Cart</a>
     </li>
   </ul>
-  <button (click)="signOut()" *ngIf="isAuthenticated" class="text-2xl">
-    <fa-icon [icon]="faArrowAltCircleRight"></fa-icon>
+
+  <button
+    (click)="signOut()"
+    *ngIf="isAuthenticated"
+    class="text-xl bg-black text-white px-2 py-1 rounded-lg"
+  >
+    <!-- <fa-icon [icon]="faArrowAltCircleRight"></fa-icon> -->
+    Sign Out
   </button>
-  <button (click)="logIn()" *ngIf="!isAuthenticated" class="text-2xl">
-    <fa-icon [icon]="faUser"></fa-icon>
+
+  <button
+    (click)="logIn()"
+    *ngIf="!isAuthenticated"
+    class="text-lg bg-black text-white px-2 py-1 flex justify-center items-center rounded-lg pb-2"
+  >
+    <!-- <fa-icon [icon]="faUser"></fa-icon> -->
+    Log in
   </button>
 </div>
