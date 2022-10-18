@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AuthenticationService } from '../Authentication.service';
+import { AuthenticationService } from '../authentication/Authentication.service';
 import {
   faBars,
   faClose,

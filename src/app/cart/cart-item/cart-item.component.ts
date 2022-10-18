@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CartService } from 'src/app/Cart.service';
+import { CartService } from 'src/app/cart/Cart.service';
 import { Product } from 'src/app/shop/products/product-item/product.model';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 

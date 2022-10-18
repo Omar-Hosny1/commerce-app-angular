@@ -23,7 +23,7 @@ ul li {
   }
 
   ul {
-    @apply order-[-1] absolute flex flex-col bg-white w-full h-[100vh] top-0 left-[-500px] p-[20px] duration-300;
+    @apply order-[-1] absolute flex flex-col bg-white w-9/12 h-[100vh] top-0 left-[-500px] p-[20px] duration-300;
   }
   .bars {
     @apply block;
@@ -32,7 +32,10 @@ ul li {
     @apply absolute top-0 block py-[10px] px-0 cursor-pointer text-[20px];
   }
   ul li {
-    @apply my-[12px] mx-0;
+    @apply my-[12px] mx-0 text-[18px];
+  }
+  ul li a {
+    @apply text-[16px];
   }
   .open {
     @apply duration-300 left-0 z-[5];

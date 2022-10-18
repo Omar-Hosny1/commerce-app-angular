@@ -1,4 +1,4 @@
-import { Product } from './shop/products/product-item/product.model';
+import { Product } from './products/product-item/product.model';
 
 export class ProductsService {
   products: Product[] = [

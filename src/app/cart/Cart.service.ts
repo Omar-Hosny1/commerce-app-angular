@@ -1,4 +1,4 @@
-import { Product } from './shop/products/product-item/product.model';
+import { Product } from '../shop/products/product-item/product.model';
 import { EventEmitter } from '@angular/core';
 export class CartService {
   cartItemsUpdated = new EventEmitter<Product[]>();
@@ -95,10 +95,10 @@ export class CartService {
     this.cartItemsUpdated.emit(this.cartItems);
   }
   checkOutCart() {
-    if (!this.cartItems.length) {
-      alert('There are no items in your cart');
-      return;
-    }
+    // if (!this.cartItems.length) {
+    //   alert('There are no items in your cart');
+    //   return;
+    // }
     this.resetCart();
     alert('Thank you for your order ❤');
   }

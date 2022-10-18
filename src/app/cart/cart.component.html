@@ -19,7 +19,13 @@
       </div>
     </div>
     <div class="order-section">
-      <button class="check-out" (click)="onCheckOut()">CHECK OUT</button>
+      <button
+        (click)="onCheckOut()"
+        class="check-out"
+        [disabled]="!cartItems.length"
+      >
+        CHECK OUT
+      </button>
       <div class="order-summary">
         <h1>Order Summary</h1>
         <div class="total-items">
@@ -42,7 +48,13 @@
           </span>
           <span>{{ cartInfo.totalPrice }}$</span>
         </div>
-        <button class="cancel" (click)="onReset()">CANCEL</button>
+        <button
+          class="cancel"
+          (click)="onReset()"
+          [disabled]="!cartItems.length"
+        >
+          CANCEL
+        </button>
       </div>
     </div>
   </div>
