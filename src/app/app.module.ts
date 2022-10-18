@@ -21,7 +21,8 @@ import { CartItemComponent } from './cart/cart-item/cart-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DataSourcesService } from './dataSrcs.service';
 import { FooterComponent } from './footer/footer.component';
-import { FilterPipe } from './pipes/filter.pipe';
+import { FilterPipe } from './shared/pipes/filter.pipe';
+import { AlertComponent } from './shared/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     CartItemComponent,
     FooterComponent,
     FilterPipe,
+    AlertComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, FormsModule],
   providers: [
