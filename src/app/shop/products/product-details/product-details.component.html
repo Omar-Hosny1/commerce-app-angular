@@ -1,4 +1,4 @@
-<div class="flex items-center justify-center m-5 h-[500px] pd-animation">
+<!-- <div class="flex items-center justify-center m-5 h-[500px] pd-animation">
   <img
     [src]="productData.imagePath"
     alt="{{ productData.name }}"
@@ -9,5 +9,17 @@
     <p>This Item Has The name : {{ productData.name }}</p>
     <p>This Item Has The price : {{ productData.price }}</p>
     <p>This is the desc : {{ productData.description }}</p>
+  </div>
+</div> -->
+
+<div class="product-details">
+  <img [src]="productData.imagePath" class="max-w-[300px]" />
+  <div class="product-details-content">
+    <h1 class="product-details-title">{{ productData.name }}</h1>
+    <span class="product-details-price">Price : {{ productData.price }}$</span>
+    <p class="product-details-description">{{ productData.description }}</p>
+
+    <button>ADD TO CART</button>
+    <button>ADD TO FAVORITE</button>
   </div>
 </div>

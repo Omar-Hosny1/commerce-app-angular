@@ -9,7 +9,7 @@ import { Product } from '../product-item/product.model';
   styleUrls: ['./product-details.component.css'],
 })
 export class ProductDetailsComponent implements OnInit {
-  productData: Product;
+  productData: any;
   constructor(
     private route: ActivatedRoute,
     private productsService: ProductsService
@@ -17,6 +17,9 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const activatedProductID = this.route.snapshot.params['id'];
-    this.productData = this.productsService.getItem(+activatedProductID);
+    if (this.productsService.getItem(+activatedProductID) == undefined) {
+    } else {
+      this.productData = this.productsService.getItem(+activatedProductID);
+    }
   }
 }

@@ -66,6 +66,6 @@
   transition: 0.3s;
   opacity: 0;
 }
-.box:hover a {
+.products-types .box:hover a {
   opacity: 1;
 }
