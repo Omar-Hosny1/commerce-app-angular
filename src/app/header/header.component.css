@@ -1,8 +1,9 @@
-.active {
+/* .active {
   @apply font-bold tracking-wider;
 }
 .nav {
   @apply flex justify-between items-center py-[20px] px-[85px] bg-gray-300 uppercase;
+  background-image: url("https://st-adidas-egy.mncdn.com/content/uploads/homepage/2022/May/ivp-launch/mh-d.webp");
 }
 ul {
   @apply flex;
@@ -39,5 +40,118 @@ ul li {
   }
   .open {
     @apply duration-300 left-0 z-[5];
+  }
+} */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
+  position: relative;
+  transition: all 0.3s;
+  background-color: white;
+}
+nav {
+  transition: 0.3s;
+}
+ul {
+  list-style: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+li {
+  margin: 0 10px;
+  position: relative;
+  text-transform: uppercase;
+  align-items: stretch;
+}
+.header-link {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.header-link::before {
+  content: "";
+  position: absolute;
+  top: -28px;
+  left: 0;
+  border-top: 5px solid black;
+  width: 0%;
+  transition: 0.3s;
+  z-index: -1;
+}
+.header-link:hover::before {
+  width: 100%;
+}
+.discount {
+  background-color: rgb(255 255 0);
+  text-align: center;
+  padding: 10px;
+  font-weight: 600;
+}
+.active {
+  font-weight: 700;
+}
+.bars {
+  display: none;
+}
+
+.close-toggel {
+  display: none;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.close-toggel:hover {
+  border-bottom: 5px solid black;
+}
+.toggle-nav {
+  right: 0;
+}
+@media (max-width: 991px) {
+  .close-toggel {
+    display: block;
+  }
+  .bars {
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  header {
+    justify-content: space-between;
+    padding: 10px 50px;
+  }
+  nav {
+    position: absolute;
+    right: -300px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: white;
+    z-index: 1;
+    width: 300px;
+  }
+  .ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  ul {
+    flex-direction: column;
+  }
+  ul li {
+    margin: 20px;
+  }
+
+  .header-link::before {
+    content: "";
+    position: absolute;
+    top: 20px;
   }
 }

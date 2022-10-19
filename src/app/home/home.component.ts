@@ -8,8 +8,10 @@ import { DataSourcesService } from '../dataSrcs.service';
 })
 export class HomeComponent implements OnInit {
   constructor(private dataService: DataSourcesService) {}
+  homeImg: string;
   bannersData: string[];
   ngOnInit(): void {
     this.bannersData = this.dataService.imagesSrcs;
+    this.homeImg = this.dataService.homeSrc[0];
   }
 }

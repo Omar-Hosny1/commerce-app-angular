@@ -6,6 +6,7 @@ import {
   faClose,
   faUser,
   faArrowAltCircleRight,
+  faHeart,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
   faBars = faBars;
   faClose = faClose;
   faUser = faUser;
+  faHeart = faHeart;
   faArrowAltCircleRight = faArrowAltCircleRight;
 
   showMenu: boolean = false;

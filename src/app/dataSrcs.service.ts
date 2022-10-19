@@ -5,4 +5,6 @@ export class DataSourcesService {
     // '../assets/banners/banner3.png',
     // '../assets/banners/banner4.png',
   ];
+
+  homeSrc = ['../assets/banners/mh-d.webp'];
 }

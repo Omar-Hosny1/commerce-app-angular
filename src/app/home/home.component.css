@@ -1,0 +1,71 @@
+.home {
+  height: calc(100vh - 68px);
+  background-image: url("https://st-adidas-egy.mncdn.com/content/uploads/homepage/2022/May/ivp-launch/mh-d.webp");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+.home-title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 50px;
+}
+.home-title span {
+  font-size: 55px;
+  font-weight: 700;
+  margin: 5px 0;
+}
+.home-title p {
+  font-size: 30px;
+}
+.home-btn {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  background-color: white;
+  padding: 10px;
+  position: relative;
+  top: 15px;
+}
+
+.products-types-container {
+  margin: 20px 10px;
+}
+.products-types-container h1 {
+  text-align: center;
+  margin: 10px 0;
+  padding: 10px 0;
+  background-color: black;
+  color: white;
+  border-bottom: 2px solid black;
+}
+.products-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+.products-types .box {
+  position: relative;
+}
+.products-types .box img {
+  width: 100%;
+}
+.products-types .box a {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: 1.5px solid white;
+  font-size: 14px;
+  transition: 0.3s;
+  opacity: 0;
+}
+.box:hover a {
+  opacity: 1;
+}
