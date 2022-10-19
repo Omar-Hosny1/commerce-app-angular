@@ -1,10 +1,13 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject, take } from 'rxjs';
 import { Product } from './products/product-item/product.model';
 
 @Injectable()
 export class ProductsService {
   constructor(private router: Router) {}
+  paramsEmitter = new BehaviorSubject<string>('');
+
   products: Product[] = [
     new Product(
       'Air Pods',
@@ -100,7 +103,7 @@ export class ProductsService {
       'Good T-Shirt',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'shoes',
       'This is shirt',
       '../assets/images/product3.jpg',
       1
@@ -151,9 +154,25 @@ export class ProductsService {
       1
     ),
   ];
-  getAllData() {
-    return this.products;
+  getData() {
+    let paramName: string = '';
+    this.paramsEmitter.pipe(take(1)).subscribe((param: string) => {
+      paramName = param;
+    });
+
+    if (!paramName) {
+      return this.products;
+    } else {
+      return this.getSpecificGategory(paramName);
+    }
   }
+
+  getSpecificGategory(gategoryName: string) {
+    const res = this.products.filter((ele) => ele.categoryType == gategoryName);
+    return res;
+  }
+
+  // get
   getItem(id: number) {
     for (let i = 0; i < this.products.length; i++) {
       const element = this.products[i];

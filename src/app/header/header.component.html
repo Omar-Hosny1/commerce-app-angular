@@ -72,7 +72,13 @@
           </a>
         </li>
         <li>
-          <a routerLinkActive="active" class="header-link"> Categories </a>
+          <a
+            routerLinkActive="active"
+            class="header-link"
+            (click)="goToCategories()"
+          >
+            Categories
+          </a>
         </li>
         <li>
           <a routerLinkActive="active" class="header-link"> Blog </a>

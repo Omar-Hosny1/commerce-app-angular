@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/shop/products.service';
 import { Product } from './product-item/product.model';
 
@@ -10,9 +11,14 @@ import { Product } from './product-item/product.model';
 export class ProductsComponent implements OnInit {
   filteredProducts = '';
   data: Product[] = [];
-  constructor(private productsService: ProductsService) {}
+  constructor(
+    private productsService: ProductsService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.data = this.productsService.getAllData();
+    let queryParams = this.activatedRoute.snapshot.queryParams;
+    this.productsService.paramsEmitter.next(queryParams['ARs']);
+    this.data = this.productsService.getData();
   }
 }
