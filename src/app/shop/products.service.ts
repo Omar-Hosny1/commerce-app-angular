@@ -156,6 +156,7 @@ export class ProductsService {
   ];
   getData() {
     let paramName: string = '';
+
     this.paramsEmitter.pipe(take(1)).subscribe((param: string) => {
       paramName = param;
     });
@@ -163,12 +164,18 @@ export class ProductsService {
     if (!paramName) {
       return this.products;
     } else {
-      return this.getSpecificGategory(paramName);
+      let theRenderedList: Product[] = this.getSpecificGategory(paramName);
+      if (!theRenderedList.length) {
+        this.router.navigate(['page-not-found']);
+        return;
+      } else return theRenderedList;
     }
   }
 
   getSpecificGategory(gategoryName: string) {
-    const res = this.products.filter((ele) => ele.categoryType == gategoryName);
+    const res: Product[] = this.products.filter(
+      (ele) => ele.categoryType == gategoryName
+    );
     return res;
   }
 

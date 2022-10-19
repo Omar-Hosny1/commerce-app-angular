@@ -10,7 +10,7 @@ import { Product } from './product-item/product.model';
 })
 export class ProductsComponent implements OnInit {
   filteredProducts = '';
-  data: Product[] = [];
+  data: Product[] | undefined = [];
   constructor(
     private productsService: ProductsService,
     private activatedRoute: ActivatedRoute
