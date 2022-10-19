@@ -13,7 +13,7 @@ export class ProductsService {
       'Air Pods',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'accessories',
       `Music clears your mind, moves your body and gets you in the zone. The adidas Z.N.E. 01 earbuds offer engaging sound without ever holding you back. When it comes to comfort, these earbuds check all the boxes. They're sleek and simple, giving you an easy fit through active days. Wear them as an everyday pair or while you train. Sweat-proof and splash-proof, they stand up to everything from wet-weather commutes to quick sessions at the gym.`,
       '../assets/images/product2.jpg',
       1
@@ -22,16 +22,16 @@ export class ProductsService {
       'Good T-Shirt',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'clothes',
       'This is shirt',
       '../assets/images/product1.jpg',
       1
     ),
     new Product(
-      'Good T-Shirt',
+      'Good Jacket',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'clothes',
       'This is shirt',
       '../assets/images/product3.jpg',
       1
@@ -40,53 +40,53 @@ export class ProductsService {
       'Adidas Bottle',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'accessories',
       'This is shirt',
       '../assets/images/product4.jpg',
       1
     ),
     new Product(
-      'Good T-Shirt',
+      'Sun Glass',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'accessories',
       'This is shirt',
-      '../assets/images/product4.jpg',
+      '../assets/images/product5.jpg',
       1
     ),
     new Product(
-      'Good T-Shirt',
+      'Addidas Hat',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'accessories',
       'This is shirt',
-      '../assets/images/product1.jpg',
+      '../assets/images/product6.jpg',
       1
     ),
     new Product(
-      'Good T-Shirt',
+      'Bag',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'accessories',
       'This is shirt',
       '../assets/images/product7.jpg',
       1
     ),
     new Product(
-      'Good T-Shirt',
+      'Shoes Colorful',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'shoes',
       'This is shirt',
       '../assets/images/product8.jpg',
       1
     ),
     new Product(
-      'Good T-Shirt',
+      'Air Pods',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
-      'This is shirt',
+      'accessories',
+      `Music clears your mind, moves your body and gets you in the zone. The adidas Z.N.E. 01 earbuds offer engaging sound without ever holding you back. When it comes to comfort, these earbuds check all the boxes. They're sleek and simple, giving you an easy fit through active days. Wear them as an everyday pair or while you train. Sweat-proof and splash-proof, they stand up to everything from wet-weather commutes to quick sessions at the gym.`,
       '../assets/images/product2.jpg',
       1
     ),
@@ -94,61 +94,61 @@ export class ProductsService {
       'Good T-Shirt',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'clothes',
       'This is shirt',
       '../assets/images/product1.jpg',
       1
     ),
     new Product(
-      'Good T-Shirt',
+      'Good Jacket',
       Math.random(),
       54.75,
-      'shoes',
+      'clothes',
       'This is shirt',
       '../assets/images/product3.jpg',
       1
     ),
     new Product(
-      'Good T-Shirt',
+      'Adidas Bottle',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'accessories',
       'This is shirt',
       '../assets/images/product4.jpg',
       1
     ),
     new Product(
-      'Good T-Shirt',
+      'Sun Glass',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'accessories',
       'This is shirt',
-      '../assets/images/product4.jpg',
+      '../assets/images/product5.jpg',
       1
     ),
     new Product(
-      'Good T-Shirt',
+      'Addidas Hat',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'accessories',
       'This is shirt',
-      '../assets/images/product1.jpg',
+      '../assets/images/product6.jpg',
       1
     ),
     new Product(
-      'Good T-Shirt',
+      'Bag',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'accessories',
       'This is shirt',
       '../assets/images/product7.jpg',
       1
     ),
     new Product(
-      'Good T-Shirt',
+      'Shoes',
       Math.random(),
       54.75,
-      'Shirts and Shoes',
+      'shoes',
       'This is shirt',
       '../assets/images/product8.jpg',
       1
@@ -179,7 +179,6 @@ export class ProductsService {
     return res;
   }
 
-  // get
   getItem(id: number) {
     for (let i = 0; i < this.products.length; i++) {
       const element = this.products[i];
