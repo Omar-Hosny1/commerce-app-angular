@@ -1,12 +1,12 @@
 import { Product } from '../shop/products/product-item/product.model';
-import { EventEmitter, Injectable } from '@angular/core';
+import { EventEmitter, Injectable, OnInit } from '@angular/core';
+import { BehaviorSubject, take } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class CartService {
   cartItemsUpdated = new EventEmitter<Product[]>();
   showAlertUpdated = new EventEmitter<boolean>();
-
+  theDeleteRequestItem = new BehaviorSubject<any>(null);
   cartItems: Product[] = [];
-  showAlert: boolean = false;
   cartInfo: { totalItems: number; totalQuantity: number; totalPrice: number } =
     {
       totalItems: 0,
@@ -80,12 +80,7 @@ export class CartService {
       if (element.id == item.id) {
         if (element.quantity == 1) {
           this.showAlertUpdated.emit(true);
-          this.showAlert = true;
-
-          // this.removeFromCart(item);
-          // this.cartInfo.totalItems--;
-          // this.cartInfo.totalQuantity--;
-          // this.cartInfo.totalPrice -= item.price;
+          this.theDeleteRequestItem.next(item);
         } else {
           element.quantity--;
           this.cartInfo.totalQuantity--;
@@ -94,6 +89,13 @@ export class CartService {
       }
     }
   }
+
+  removeTheLastItemFromCartInfo(item: Product) {
+    this.cartInfo.totalItems--;
+    this.cartInfo.totalQuantity--;
+    this.cartInfo.totalPrice -= item.price;
+  }
+
   resetCart() {
     this.cartInfo.totalItems = 0;
     this.cartInfo.totalPrice = 0;

@@ -21,7 +21,6 @@ export class CartComponent implements OnInit {
       (items: Product[]) => (this.cartItems = items)
     );
     this.cartInfo = this.cartService.cartInfo;
-    this.showAlert = this.cartService.showAlert;
     this.cartService.showAlertUpdated.subscribe(
       (val) => (this.showAlert = val)
     );

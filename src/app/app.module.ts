@@ -22,7 +22,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DataSourcesService } from './dataSrcs.service';
 import { FooterComponent } from './footer/footer.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
-import { AlertComponent } from './shared/alert/alert.component';
+import { AlertComponent } from './cart/alert/alert.component';
 
 @NgModule({
   declarations: [
