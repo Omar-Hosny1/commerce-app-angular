@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CartService } from 'src/app/cart/Cart.service';
 
 @Component({
   selector: 'app-alert',
@@ -7,7 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AlertComponent implements OnInit {
   @Input() message: string;
-  constructor() {}
+  constructor(private cartSer: CartService) {}
 
   ngOnInit(): void {}
+
+  onCancel() {
+    this.cartSer.showAlertUpdated.emit(false);
+  }
 }

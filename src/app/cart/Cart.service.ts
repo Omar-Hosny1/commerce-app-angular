@@ -3,7 +3,10 @@ import { EventEmitter, Injectable } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class CartService {
   cartItemsUpdated = new EventEmitter<Product[]>();
+  showAlertUpdated = new EventEmitter<boolean>();
+
   cartItems: Product[] = [];
+  showAlert: boolean = false;
   cartInfo: { totalItems: number; totalQuantity: number; totalPrice: number } =
     {
       totalItems: 0,
@@ -76,10 +79,13 @@ export class CartService {
       const element = items[i];
       if (element.id == item.id) {
         if (element.quantity == 1) {
-          this.removeFromCart(item);
-          this.cartInfo.totalItems--;
-          this.cartInfo.totalQuantity--;
-          this.cartInfo.totalPrice -= item.price;
+          this.showAlertUpdated.emit(true);
+          this.showAlert = true;
+
+          // this.removeFromCart(item);
+          // this.cartInfo.totalItems--;
+          // this.cartInfo.totalQuantity--;
+          // this.cartInfo.totalPrice -= item.price;
         } else {
           element.quantity--;
           this.cartInfo.totalQuantity--;
