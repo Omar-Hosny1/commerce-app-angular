@@ -8,7 +8,7 @@ import {
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { AuthenticationService } from './Authentication.service';
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthGuradService implements CanActivate {
   constructor(
     private AuthService: AuthenticationService,

@@ -42,13 +42,7 @@ import { AlertComponent } from './shared/alert/alert.component';
     AlertComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, FormsModule],
-  providers: [
-    ProductsService,
-    AuthenticationService,
-    AuthGuradService,
-    CartService,
-    DataSourcesService,
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

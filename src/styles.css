@@ -6,5 +6,5 @@
   scroll-behavior: smooth;
 }
 body {
-  overflow-x: hidden;
+  @apply overflow-x-hidden;
 }

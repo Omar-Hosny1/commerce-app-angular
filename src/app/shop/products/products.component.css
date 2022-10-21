@@ -3,7 +3,7 @@
   transform: translateX(-50%);
 }
 .search {
-  @apply mx-[85px] my-5;
+  @apply mx-[70px] my-5;
 }
 
 @media (max-width: 450px) {

@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { CartService } from '../cart/Cart.service';
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthenticationService {
   constructor(private cartService: CartService) {}
   isLoggedIn: boolean = false;

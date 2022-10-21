@@ -1,5 +1,6 @@
 import { Product } from '../shop/products/product-item/product.model';
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
+@Injectable({ providedIn: 'root' })
 export class CartService {
   cartItemsUpdated = new EventEmitter<Product[]>();
   cartItems: Product[] = [];

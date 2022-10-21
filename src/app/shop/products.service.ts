@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, take } from 'rxjs';
 import { Product } from './products/product-item/product.model';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ProductsService {
   constructor(private router: Router) {}
   paramsEmitter = new BehaviorSubject<string>('');
