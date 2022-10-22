@@ -9,8 +9,17 @@
   <hr class="my-3 bg-slate-400" />
 </div>
 <div class="flex flex-wrap justify-center items-center relative mx-[30px]">
+  <app-spinner
+    *ngIf="isFething && !error"
+    class="flex justify-center items-center"
+  ></app-spinner>
+
   <app-product-item
     *ngFor="let product of data | filter: filteredProducts"
     [product]="product"
   ></app-product-item>
+
+  <p class="flex justify-center items-center" *ngIf="error">
+    Some Thing Went Wrong
+  </p>
 </div>
