@@ -5,10 +5,12 @@
     >NEW</span
   >
   <img [src]="product.imagePath" [alt]="product.name" class="w-[300px]" />
-  <span class="block text-sm text-gray-500">{{ product.categoryType }}</span>
+  <span class="block text-sm text-gray-500">{{
+    product.categoryType | uppercase
+  }}</span>
   <span class="block text-lg uppercase">{{ product.name }}</span>
   <div class="flex items-center justify-between relative bottom-[5px]">
-    <span class="text-gray-700">PRICE: {{ product.price }}$</span>
+    <span class="text-gray-700">PRICE: {{ product.price }} EGP</span>
     <div class="">
       <button
         (click)="onAddToCart()"

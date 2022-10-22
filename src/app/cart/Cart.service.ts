@@ -6,7 +6,35 @@ export class CartService {
   cartItemsUpdated = new EventEmitter<Product[]>();
   showAlertUpdated = new EventEmitter<boolean>();
   theDeleteRequestItem = new BehaviorSubject<any>(null);
-  cartItems: Product[] = [];
+  cartItems: Product[] = [
+    // new Product(
+    //   'ULTRA BOOST 22',
+    //   Math.random(),
+    //   54.75,
+    //   'shoes',
+    //   "The adidas by Stella McCartney Ultraboost 20 Shoe might boast a retro style, but they're actually a high-performance update on our most famous running silhouette. In great news for feet everywhere, they were designed and tested to be comfortably worn on your next 10km run.",
+    //   '../assets/images/product8.jpg',
+    //   1
+    // ),
+    // new Product(
+    //   'ULTRA BOOST 22',
+    //   Math.random(),
+    //   54.75,
+    //   'shoes',
+    //   "The adidas by Stella McCartney Ultraboost 20 Shoe might boast a retro style, but they're actually a high-performance update on our most famous running silhouette. In great news for feet everywhere, they were designed and tested to be comfortably worn on your next 10km run.",
+    //   '../assets/images/product8.jpg',
+    //   1
+    // ),
+    // new Product(
+    //   'ULTRA BOOST 22',
+    //   Math.random(),
+    //   54.75,
+    //   'shoes',
+    //   "The adidas by Stella McCartney Ultraboost 20 Shoe might boast a retro style, but they're actually a high-performance update on our most famous running silhouette. In great news for feet everywhere, they were designed and tested to be comfortably worn on your next 10km run.",
+    //   '../assets/images/product8.jpg',
+    //   1
+    // ),
+  ];
   cartInfo: { totalItems: number; totalQuantity: number; totalPrice: number } =
     {
       totalItems: 0,
@@ -47,6 +75,11 @@ export class CartService {
     this.cartItems.push(item);
     this.addCartInfo(item.price);
     alert('ADDED ✔');
+  }
+
+  deleteItemRequest(item: Product) {
+    this.showAlertUpdated.emit(true);
+    this.theDeleteRequestItem.next(item);
   }
 
   deleteItem(item: Product) {
@@ -104,10 +137,6 @@ export class CartService {
     this.cartItemsUpdated.emit(this.cartItems);
   }
   checkOutCart() {
-    // if (!this.cartItems.length) {
-    //   alert('There are no items in your cart');
-    //   return;
-    // }
     this.resetCart();
     alert('Thank you for your order ❤');
   }

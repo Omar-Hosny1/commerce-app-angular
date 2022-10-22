@@ -16,7 +16,9 @@
   <img [src]="productData.imagePath" class="max-w-[300px]" />
   <div class="product-details-content">
     <h1 class="product-details-title">{{ productData.name }}</h1>
-    <span class="product-details-price">Price : {{ productData.price }}$</span>
+    <span class="product-details-price"
+      >Price : {{ productData.price }} EGP</span
+    >
     <p class="product-details-description">{{ productData.description }}</p>
 
     <button (click)="onAddToCart()">ADD TO CART</button>

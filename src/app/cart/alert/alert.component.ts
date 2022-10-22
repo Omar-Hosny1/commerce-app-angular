@@ -23,8 +23,12 @@ export class AlertComponent implements OnInit {
     this.cartSer.showAlertUpdated.emit(false);
   }
   onSure() {
-    this.cartSer.removeFromCart(this.theItemThatWantToDelete);
-    this.cartSer.removeTheLastItemFromCartInfo(this.theItemThatWantToDelete);
+    if (this.theItemThatWantToDelete.quantity > 1) {
+      this.cartSer.deleteItem(this.theItemThatWantToDelete);
+    } else {
+      this.cartSer.removeFromCart(this.theItemThatWantToDelete);
+      this.cartSer.removeTheLastItemFromCartInfo(this.theItemThatWantToDelete);
+    }
     this.cartSer.showAlertUpdated.emit(false);
   }
 }
