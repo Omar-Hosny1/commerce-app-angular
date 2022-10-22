@@ -32,9 +32,9 @@
 <div class="header-section">
   <header>
     <h1>ADIDAS</h1>
-    <nav class="nav">
+    <nav class="nav" [ngClass]="{ right: showMenu }">
       <ul>
-        <li>
+        <li (click)="showMenu = false">
           <a
             routerLinkActive="active"
             id="main"
@@ -45,17 +45,17 @@
             Home
           </a>
         </li>
-        <li>
+        <li (click)="showMenu = false">
           <a routerLinkActive="active" routerLink="shop" class="header-link">
             Shop
           </a>
         </li>
-        <li>
+        <li (click)="showMenu = false">
           <a routerLinkActive="active" class="header-link" routerLink="cart">
             Cart
           </a>
         </li>
-        <li>
+        <li (click)="showMenu = false">
           <a
             routerLinkActive="active"
             class="header-link"
@@ -65,30 +65,35 @@
           </a>
         </li>
         <li>
-          <a class="close-toggel"> Close </a>
+          <a class="close-toggel" (click)="closeMenu()"> Close </a>
         </li>
       </ul>
     </nav>
     <div>
-      <div class="">
-        <button
-          (click)="signOut()"
-          *ngIf="isAuthenticated"
-          class="bg-black text-white text-base px-2 py-1 rounded-sm uppercase"
-        >
-          Sign Out
-        </button>
+      <div class="flex items-center justify-center">
+        <div class="">
+          <button
+            (click)="signOut()"
+            *ngIf="isAuthenticated"
+            class="bg-black text-white text-base px-2 py-1 rounded-sm uppercase"
+          >
+            Sign Out
+          </button>
 
-        <button
-          (click)="logIn()"
-          *ngIf="!isAuthenticated"
-          class="bg-black text-white text-base px-2 py-1 rounded-sm uppercase"
-        >
-          Log in
-        </button>
+          <button
+            (click)="logIn()"
+            *ngIf="!isAuthenticated"
+            class="bg-black text-white text-sm lg:text-base px-2 py-1 rounded-sm uppercase"
+          >
+            Log in
+          </button>
+        </div>
+        <fa-icon
+          [icon]="faBars"
+          class="bars text-xl"
+          (click)="openMenu()"
+        ></fa-icon>
       </div>
-      <!-- <fa-icon [icon]="faHeart" class="icon"></fa-icon> -->
-      <fa-icon [icon]="faBars" class="bars"></fa-icon>
     </div>
   </header>
   <div class="discount">

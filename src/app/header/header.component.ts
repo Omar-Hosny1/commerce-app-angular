@@ -15,6 +15,7 @@ import {
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  showMenu: boolean = false;
   isAuthenticated?: boolean = false;
   faBars = faBars;
   faClose = faClose;
@@ -22,10 +23,8 @@ export class HeaderComponent implements OnInit {
   faHeart = faHeart;
   faArrowAltCircleRight = faArrowAltCircleRight;
 
-  showMenu: boolean = false;
   constructor(
     private authService: AuthenticationService,
-    private route: ActivatedRoute,
     private router: Router
   ) {}
 
@@ -40,12 +39,18 @@ export class HeaderComponent implements OnInit {
   }
   logIn() {
     this.authService.logIn();
-    // console.log(this.route.toString());
   }
   goToCategories() {
     this.router.navigate(['']);
     setTimeout(() => {
       window.scrollTo(0, 500);
     }, 200);
+  }
+
+  closeMenu() {
+    this.showMenu = false;
+  }
+  openMenu() {
+    this.showMenu = true;
   }
 }

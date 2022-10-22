@@ -112,6 +112,10 @@ li {
 .toggle-nav {
   right: 0;
 }
+
+.right {
+  right: 0;
+}
 @media (max-width: 991px) {
   .close-toggel {
     display: block;
