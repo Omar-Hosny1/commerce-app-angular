@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication/Authentication.service';
 import {
@@ -8,13 +8,14 @@ import {
   faArrowAltCircleRight,
   faHeart,
 } from '@fortawesome/free-solid-svg-icons';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   showMenu: boolean = false;
   isAuthenticated: boolean;
   faBars = faBars;
@@ -22,12 +23,11 @@ export class HeaderComponent implements OnInit {
   faUser = faUser;
   faHeart = faHeart;
   faArrowAltCircleRight = faArrowAltCircleRight;
-
+  private userSub: Subscription;
   constructor(
     private authService: AuthenticationService,
     private router: Router
   ) {}
-
   ngOnInit(): void {
     this.isAuthenticated = this.isLoggedInFunc();
     this.authService.isAuth.subscribe(() => {
@@ -56,5 +56,9 @@ export class HeaderComponent implements OnInit {
   }
   openMenu() {
     this.showMenu = true;
+  }
+
+  ngOnDestroy(): void {
+    this.userSub.unsubscribe();
   }
 }
