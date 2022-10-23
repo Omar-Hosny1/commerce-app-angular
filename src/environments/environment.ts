@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  httpLink: 'https://commerce-app-angular-default-rtdb.firebaseio.com/',
+  apiKey: 'AIzaSyBz9uuglu3Ni57p4vgTm0Qf6UTljgnpkiA',
 };
 
 /*

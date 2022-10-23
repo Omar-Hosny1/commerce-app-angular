@@ -1,14 +1,17 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { EventEmitter, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, map, take } from 'rxjs';
+import { BehaviorSubject, exhaustMap, map, take } from 'rxjs';
 import { Product } from './products/product-item/product.model';
 import { Store } from '@ngrx/store';
 import * as HttpActions from './http-effects-store/http-effects.actions';
+import { environment } from '../../environments/environment';
+import { AuthenticationService } from '../authentication/Authentication.service';
 
 @Injectable({ providedIn: 'root' })
 export class ProductsService implements OnInit {
   constructor(
+    private authService: AuthenticationService,
     private router: Router,
     private http: HttpClient,
     private store: Store<{
@@ -57,29 +60,37 @@ export class ProductsService implements OnInit {
 
   __getProducts__() {
     this.store.dispatch(new HttpActions.StartFetching());
-    this.http
-      .get<{ [key: string]: Product[] }>(
-        'https://commerce-app-angular-default-rtdb.firebaseio.com/products.json'
-      )
-      .pipe(
-        map((resData) => {
-          let data: Product[] = [];
-          for (const key in resData) {
-            data = resData[key];
-          }
-          return data;
-        })
-      )
-      .subscribe(
-        (resData) => {
-          this.store.dispatch(new HttpActions.StopFetching());
-          this.products = resData;
-          this.productsAdded.emit(this.products);
-        },
-        (err) => {
-          this.store.dispatch(new HttpActions.StopFetching());
-          this.store.dispatch(new HttpActions.ErrorHappend());
-        }
-      );
+    this.authService.user.subscribe((user) => {});
+    // .pipe(
+    //   take(1),
+    //   exhaustMap((user) => {
+    //     return this.http.get<{ [key: string]: Product[] }>(
+    //       environment.httpLink + 'products.json',
+    //       {
+    //         params: new HttpParams().set('auth', user.token),
+    //       }
+    //     );
+    //   }),
+    //   map((resData) => {
+    //     // console.log('AHOOO', resData);
+
+    //     let data: Product[] = [];
+    //     for (const key in resData) {
+    //       data = resData[key];
+    //     }
+    //     return data;
+    //   })
+    // )
+    // .subscribe(
+    //   (resData) => {
+    //     this.store.dispatch(new HttpActions.StopFetching());
+    //     this.products = resData;
+    //     this.productsAdded.emit(this.products);
+    //   },
+    //   (err) => {
+    //     this.store.dispatch(new HttpActions.StopFetching());
+    //     this.store.dispatch(new HttpActions.ErrorHappend());
+    //   }
+    // );
   }
 }
