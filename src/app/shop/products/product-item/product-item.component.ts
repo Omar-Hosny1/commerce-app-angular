@@ -15,8 +15,10 @@ import {
 })
 export class ProductItemComponent implements OnInit {
   @Input() product: Product;
+  isLoggedIn: boolean;
   faArrowAltCircleLeft = faArrowAltCircleRight;
   faShoppingCart = faShoppingCart;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -24,15 +26,23 @@ export class ProductItemComponent implements OnInit {
     private cartService: CartService
   ) {}
 
+  ngOnInit(): void {}
+
+  isLoggedInFunc(): boolean {
+    const LS = localStorage.getItem('loggedin');
+    return LS == null || LS == '0' ? false : true;
+  }
+
   onAddToCart() {
-    if (!this.authService.isLoggedIn) {
+    const isAuthenticated = this.isLoggedInFunc();
+    if (!isAuthenticated) {
       alert('YOU NEED TO LOGIN FIRST');
       this.router.navigate(['auth']);
     } else {
       this.cartService.addToCard(this.product);
     }
   }
-  ngOnInit(): void {}
+
   toDetailsPage() {
     this.router.navigate([this.product.id], { relativeTo: this.route });
   }

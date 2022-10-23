@@ -1,2 +1,53 @@
-<h1>You Need To Login First</h1>
-<button (click)="login()">Login</button>
+<div class="flex flex-col justify-center items-center">
+  <div class="text-center mt-4" *ngIf="error">
+    <p
+      class="text-center text-base uppercase min-w-[270px] md:w-[500px] bg-red-300 border-red-800 border-solid border-[1px] text-red-700 rounded-sm px-3 py-1"
+    >
+      {{ error }}
+    </p>
+  </div>
+  <form (ngSubmit)="onSubmit()" #form="ngForm" *ngIf="!isLoading">
+    <div class="flex flex-col mt-4">
+      <label for="email" class="pb-1">Email</label>
+      <input
+        required
+        type="text"
+        email
+        ngModel
+        id="email"
+        name="email"
+        class="min-w-[270px] px-2 py-1 border-black border-solid border-[1px] rounded-md md:w-[500px]"
+      />
+    </div>
+    <div class="flex flex-col">
+      <label for="password" class="pb-1">Password</label>
+      <input
+        required
+        minlength="6"
+        name="password"
+        type="password"
+        ngModel
+        id="password"
+        class="min-w-[270px] px-2 py-1 border-black border-solid border-[1px] rounded-md"
+      />
+    </div>
+    <button
+      type="submit"
+      class="bg-black text-white px-2 py-1 mt-2"
+      [ngClass]="{ 'form-not-valid': !form.valid }"
+    >
+      {{ loginMode ? "Log In" : "Sign Up" }}
+    </button>
+    |
+    <button
+      type="button"
+      class="bg-black text-white px-2 py-1 mt-2"
+      (click)="loginMode = !loginMode"
+    >
+      Switch to {{ loginMode ? "Sign Up" : "Log in" }}
+    </button>
+  </form>
+  <div class="mt-4">
+    <app-spinner *ngIf="isLoading && !error"></app-spinner>
+  </div>
+</div>

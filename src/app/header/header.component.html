@@ -50,7 +50,7 @@
             Shop
           </a>
         </li>
-        <li (click)="showMenu = false">
+        <li (click)="showMenu = false" *ngIf="isAuthenticated">
           <a routerLinkActive="active" class="header-link" routerLink="cart">
             Cart
           </a>
@@ -64,6 +64,13 @@
             Categories
           </a>
         </li>
+        <li
+          (click)="showMenu = false"
+          routerLink="/auth"
+          *ngIf="!isAuthenticated"
+        >
+          <a routerLinkActive="active" class="header-link"> Authenticate </a>
+        </li>
         <li>
           <a class="close-toggel" (click)="closeMenu()"> Close </a>
         </li>
@@ -73,19 +80,11 @@
       <div class="flex items-center justify-center">
         <div class="">
           <button
-            (click)="signOut()"
             *ngIf="isAuthenticated"
+            (click)="signOut()"
             class="bg-black text-white text-base px-2 py-1 rounded-sm uppercase"
           >
             Sign Out
-          </button>
-
-          <button
-            (click)="logIn()"
-            *ngIf="!isAuthenticated"
-            class="bg-black text-white text-sm lg:text-base px-2 py-1 rounded-sm uppercase"
-          >
-            Log in
           </button>
         </div>
         <fa-icon

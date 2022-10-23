@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication/Authentication.service';
 import {
   faBars,
@@ -16,7 +16,7 @@ import {
 })
 export class HeaderComponent implements OnInit {
   showMenu: boolean = false;
-  isAuthenticated?: boolean = false;
+  isAuthenticated: boolean;
   faBars = faBars;
   faClose = faClose;
   faUser = faUser;
@@ -29,17 +29,21 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.authService.loggedInUpdated.subscribe(
-      (isAuth: boolean) => (this.isAuthenticated = isAuth)
-    );
+    this.isAuthenticated = this.isLoggedInFunc();
+    this.authService.isAuth.subscribe(() => {
+      this.isAuthenticated = this.isLoggedInFunc();
+    });
+  }
+
+  isLoggedInFunc(): boolean {
+    const LS = localStorage.getItem('loggedin');
+    return LS == null || LS == '0' ? false : true;
   }
 
   signOut() {
     this.authService.signOut();
   }
-  logIn() {
-    this.authService.logIn();
-  }
+
   goToCategories() {
     this.router.navigate(['']);
     setTimeout(() => {

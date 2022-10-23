@@ -22,10 +22,15 @@ export class AuthGuradService implements CanActivate {
     | UrlTree
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
-    if (this.AuthService.isLoggedIn) {
-      return this.AuthService.isLoggedIn;
+    const isLoggedInFunc = () => {
+      const LS = localStorage.getItem('loggedin');
+      return LS == null || LS == '0' ? false : true;
+    };
+    const isAuthenticated = isLoggedInFunc();
+    if (isAuthenticated) {
+      return true;
     }
-    this.router.navigate(['']);
+    this.router.navigate(['/auth']);
     return false;
   }
 }

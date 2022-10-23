@@ -1,40 +1,14 @@
 import { Product } from '../shop/products/product-item/product.model';
 import { EventEmitter, Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject, take } from 'rxjs';
+import { AuthenticationService } from '../authentication/Authentication.service';
 @Injectable({ providedIn: 'root' })
 export class CartService {
+  constructor() {}
   cartItemsUpdated = new EventEmitter<Product[]>();
   showAlertUpdated = new EventEmitter<boolean>();
   theDeleteRequestItem = new BehaviorSubject<any>(null);
-  cartItems: Product[] = [
-    // new Product(
-    //   'ULTRA BOOST 22',
-    //   Math.random(),
-    //   54.75,
-    //   'shoes',
-    //   "The adidas by Stella McCartney Ultraboost 20 Shoe might boast a retro style, but they're actually a high-performance update on our most famous running silhouette. In great news for feet everywhere, they were designed and tested to be comfortably worn on your next 10km run.",
-    //   '../assets/images/product8.jpg',
-    //   1
-    // ),
-    // new Product(
-    //   'ULTRA BOOST 22',
-    //   Math.random(),
-    //   54.75,
-    //   'shoes',
-    //   "The adidas by Stella McCartney Ultraboost 20 Shoe might boast a retro style, but they're actually a high-performance update on our most famous running silhouette. In great news for feet everywhere, they were designed and tested to be comfortably worn on your next 10km run.",
-    //   '../assets/images/product8.jpg',
-    //   1
-    // ),
-    // new Product(
-    //   'ULTRA BOOST 22',
-    //   Math.random(),
-    //   54.75,
-    //   'shoes',
-    //   "The adidas by Stella McCartney Ultraboost 20 Shoe might boast a retro style, but they're actually a high-performance update on our most famous running silhouette. In great news for feet everywhere, they were designed and tested to be comfortably worn on your next 10km run.",
-    //   '../assets/images/product8.jpg',
-    //   1
-    // ),
-  ];
+  cartItems: Product[] = [];
   cartInfo: { totalItems: number; totalQuantity: number; totalPrice: number } =
     {
       totalItems: 0,

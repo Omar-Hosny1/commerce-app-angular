@@ -12,6 +12,7 @@ import { Product } from '../product-item/product.model';
 })
 export class ProductDetailsComponent implements OnInit {
   productData: any;
+  isLoggedIn: boolean;
   constructor(
     private authService: AuthenticationService,
     private router: Router,
@@ -28,8 +29,14 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
 
+  isLoggedInFunc(): boolean {
+    const LS = localStorage.getItem('loggedin');
+    return LS == null || LS == '0' ? false : true;
+  }
+
   onAddToCart() {
-    if (!this.authService.isLoggedIn) {
+    const isAuthenticated = this.isLoggedInFunc();
+    if (!isAuthenticated) {
       alert('YOU NEED TO LOGIN FIRST');
       this.router.navigate(['auth']);
     } else {
