@@ -1,17 +1,3 @@
-<!-- <div class="flex items-center justify-center m-5 h-[500px] pd-animation">
-  <img
-    [src]="productData.imagePath"
-    alt="{{ productData.name }}"
-    class="w-40 h-40"
-  />
-  <div class="flex flex-col items-center justify-center ml-[15px]">
-    <p>This Item Has The Id : {{ productData.id }}</p>
-    <p>This Item Has The name : {{ productData.name }}</p>
-    <p>This Item Has The price : {{ productData.price }}</p>
-    <p>This is the desc : {{ productData.description }}</p>
-  </div>
-</div> -->
-
 <div class="product-details">
   <img [src]="productData.imagePath" class="max-w-[300px]" />
   <div class="product-details-content">
@@ -22,5 +8,11 @@
     <p class="product-details-description">{{ productData.description }}</p>
 
     <button (click)="onAddToCart()">ADD TO CART</button>
+    <span
+      *ngIf="isAdded"
+      [ngClass]="{ added: isAdded }"
+      class="uppercase relative right-[70px]"
+      >Added</span
+    >
   </div>
 </div>

@@ -7,7 +7,7 @@
   padding: 5px;
 }
 .added {
-  animation: productAdded 0.7s ease forwards;
+  animation: productAdded 1.2s ease forwards;
 }
 @keyframes productAdded {
   0% {
@@ -16,7 +16,11 @@
   }
   50% {
     opacity: 1;
-    left: -20px;
+    left: -10px;
+  }
+  85% {
+    opacity: 1;
+    left: -10px;
   }
   100% {
     opacity: 0;

@@ -2,7 +2,7 @@
   @apply flex justify-between my-[50px] mx-[100px] text-center;
 }
 .order-section {
-  @apply max-w-[450px];
+  @apply max-w-[320px];
   flex: 0.7;
 }
 .order-section .check-out {

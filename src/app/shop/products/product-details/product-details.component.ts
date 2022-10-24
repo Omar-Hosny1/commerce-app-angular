@@ -13,6 +13,7 @@ import { Product } from '../product-item/product.model';
 export class ProductDetailsComponent implements OnInit {
   productData: any;
   isLoggedIn: boolean;
+  isAdded: boolean = false;
   constructor(
     private authService: AuthenticationService,
     private router: Router,
@@ -29,11 +30,6 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
 
-  // isLoggedInFunc(): boolean {
-  //   const LS = localStorage.getItem('loggedin');
-  //   return LS == null || LS == '0' ? false : true;
-  // }
-
   onAddToCart() {
     const isAuthenticated = this.authService.isLoggedInFunc();
     if (!isAuthenticated) {
@@ -41,6 +37,10 @@ export class ProductDetailsComponent implements OnInit {
       this.router.navigate(['auth']);
     } else {
       this.cartService.addToCard(this.productData);
+      this.isAdded = true;
+      setTimeout(() => {
+        this.isAdded = false;
+      }, 1200);
     }
   }
 }

@@ -35,11 +35,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   }
 
-  // isLoggedInFunc(): boolean {
-  //   const LS = localStorage.getItem('loggedin');
-  //   return LS == null || LS == '0' ? false : true;
-  // }
-
   signOut() {
     this.authService.signOut();
   }

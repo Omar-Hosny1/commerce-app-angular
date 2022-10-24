@@ -1,48 +1,3 @@
-/* .active {
-  @apply font-bold tracking-wider;
-}
-.nav {
-  @apply flex justify-between items-center py-[20px] px-[85px] bg-gray-300 uppercase;
-  background-image: url("https://st-adidas-egy.mncdn.com/content/uploads/homepage/2022/May/ivp-launch/mh-d.webp");
-}
-ul {
-  @apply flex;
-}
-ul li {
-  @apply m-0 mx-[10px] relative;
-}
-
-.bars {
-  @apply hidden cursor-pointer;
-}
-.close-icon {
-  @apply hidden;
-}
-@media (max-width: 450px) {
-  .nav {
-    @apply py-[15px] px-[30px];
-  }
-
-  ul {
-    @apply order-[-1] absolute flex flex-col bg-white w-9/12 h-[100vh] top-0 left-[-500px] p-[20px] duration-300;
-  }
-  .bars {
-    @apply block;
-  }
-  .close-icon {
-    @apply absolute top-0 block py-[10px] px-0 cursor-pointer text-[20px];
-  }
-  ul li {
-    @apply my-[12px] mx-0 text-[18px];
-  }
-  ul li a {
-    @apply text-[16px];
-  }
-  .open {
-    @apply duration-300 left-0 z-[5];
-  }
-} */
-
 header {
   display: flex;
   align-items: center;
@@ -109,13 +64,7 @@ li {
 .close-toggel:hover {
   border-bottom: 5px solid black;
 }
-.toggle-nav {
-  right: 0;
-}
 
-.right {
-  right: 0;
-}
 @media (max-width: 991px) {
   .close-toggel {
     display: block;
@@ -131,14 +80,14 @@ li {
   }
   nav {
     position: absolute;
-    right: -300px;
+    right: 0px;
     top: 0;
-    display: flex;
     flex-direction: column;
     height: 100vh;
     background-color: white;
     z-index: 1;
     width: 300px;
+    display: none;
   }
   .ul {
     display: flex;
@@ -158,4 +107,8 @@ li {
     position: absolute;
     top: 20px;
   }
+}
+
+.showNav {
+  display: flex;
 }

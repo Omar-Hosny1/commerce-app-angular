@@ -58,7 +58,7 @@ export class CartComponent implements OnInit {
       this.isAValidCoupon = true;
       setTimeout(() => {
         this.isAValidCoupon = false;
-      }, 500);
+      }, 1000);
     }
     this.form.reset();
   }

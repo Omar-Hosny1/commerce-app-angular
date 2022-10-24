@@ -87,3 +87,24 @@
     margin: 5px 70px;
   }
 }
+.added {
+  animation: productAdded 1.2s ease forwards;
+}
+@keyframes productAdded {
+  0% {
+    right: 70px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    left: -10px;
+  }
+  85% {
+    opacity: 1;
+    left: -10px;
+  }
+  100% {
+    opacity: 0;
+    right: 70px;
+  }
+}
