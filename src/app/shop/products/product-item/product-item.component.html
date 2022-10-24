@@ -12,6 +12,13 @@
   <div class="flex items-center justify-between relative bottom-[5px]">
     <span class="text-gray-700">PRICE: {{ product.price }} EGP</span>
     <div class="">
+      <span
+        class="uppercase relative left-[60px]"
+        [ngClass]="{ added: showAdded }"
+        *ngIf="showAdded"
+        >Added</span
+      >
+
       <button
         (click)="onAddToCart()"
         class="mr-[7px] p-[5px] rounded-md bg-gray-400 text-white"

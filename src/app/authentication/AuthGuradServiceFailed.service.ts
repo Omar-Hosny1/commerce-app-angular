@@ -8,8 +8,9 @@ import {
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { AuthenticationService } from './Authentication.service';
+
 @Injectable({ providedIn: 'root' })
-export class AuthSuccessGuradService implements CanActivate {
+export class AuthFailedGuradService implements CanActivate {
   constructor(
     private AuthService: AuthenticationService,
     private router: Router
@@ -23,10 +24,10 @@ export class AuthSuccessGuradService implements CanActivate {
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
     const isAuthenticated = this.AuthService.isLoggedInFunc();
-    if (isAuthenticated) {
+    if (!isAuthenticated) {
       return true;
     }
-    this.router.navigate(['/auth']);
-    return false;
+    this.router.navigate(['']);
+    return true;
   }
 }

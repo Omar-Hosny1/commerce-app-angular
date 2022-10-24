@@ -6,3 +6,20 @@
   border-radius: 3px;
   padding: 5px;
 }
+.added {
+  animation: productAdded 0.7s ease forwards;
+}
+@keyframes productAdded {
+  0% {
+    left: 60px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    left: -20px;
+  }
+  100% {
+    opacity: 0;
+    left: 60px;
+  }
+}

@@ -18,7 +18,7 @@ export class ProductItemComponent implements OnInit {
   isLoggedIn: boolean;
   faArrowAltCircleLeft = faArrowAltCircleRight;
   faShoppingCart = faShoppingCart;
-
+  showAdded: boolean = false;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -28,18 +28,16 @@ export class ProductItemComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  isLoggedInFunc(): boolean {
-    const LS = localStorage.getItem('loggedin');
-    return LS == null || LS == '0' ? false : true;
-  }
-
   onAddToCart() {
-    const isAuthenticated = this.isLoggedInFunc();
+    const isAuthenticated = this.authService.isLoggedInFunc();
     if (!isAuthenticated) {
-      alert('YOU NEED TO LOGIN FIRST');
       this.router.navigate(['auth']);
     } else {
+      this.showAdded = true;
       this.cartService.addToCard(this.product);
+      setTimeout(() => {
+        this.showAdded = false;
+      }, 700);
     }
   }
 

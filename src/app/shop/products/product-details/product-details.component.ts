@@ -29,13 +29,13 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
 
-  isLoggedInFunc(): boolean {
-    const LS = localStorage.getItem('loggedin');
-    return LS == null || LS == '0' ? false : true;
-  }
+  // isLoggedInFunc(): boolean {
+  //   const LS = localStorage.getItem('loggedin');
+  //   return LS == null || LS == '0' ? false : true;
+  // }
 
   onAddToCart() {
-    const isAuthenticated = this.isLoggedInFunc();
+    const isAuthenticated = this.authService.isLoggedInFunc();
     if (!isAuthenticated) {
       alert('YOU NEED TO LOGIN FIRST');
       this.router.navigate(['auth']);

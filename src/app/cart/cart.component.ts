@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from './Cart.service';
 import { Product } from '../shop/products/product-item/product.model';
+import { NgForm } from '@angular/forms';
+import { faDownLeftAndUpRightToCenter } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cart',
@@ -9,13 +11,21 @@ import { Product } from '../shop/products/product-item/product.model';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
+  @ViewChild('couponForm') form: NgForm;
   cartItems: Product[] = [];
   cartInfo: { totalItems: number; totalQuantity: number; totalPrice: number };
   cartItemsLength = this.cartService.cartItems.length;
   showAlert: boolean;
+  showAlertMessage: boolean;
+  message: string;
+  isAValidCoupon: boolean = false;
   constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit(): void {
+    this.cartService.showAlert.subscribe((msg) => {
+      this.showAlertMessage = true;
+      this.message = msg;
+    });
     this.cartItems = this.cartService.cartItems;
     this.cartService.cartItemsUpdated.subscribe(
       (items: Product[]) => (this.cartItems = items)
@@ -36,5 +46,24 @@ export class CartComponent implements OnInit {
 
   onReset() {
     this.cartService.resetCart();
+  }
+  onSubmit() {
+    if (this.form.value.coupon.toUpperCase() == 'WELCOMEADI') {
+      this.showAlertMessage = true;
+      this.cartService.showAlert.emit(
+        'Congratulation you now have a 15% off 🎉'
+      );
+      this.cartService.onAddCoupon();
+    } else {
+      this.isAValidCoupon = true;
+      setTimeout(() => {
+        this.isAValidCoupon = false;
+      }, 500);
+    }
+    this.form.reset();
+  }
+
+  onCloseAlertMessage() {
+    this.showAlertMessage = false;
   }
 }

@@ -5,6 +5,7 @@ import { AuthenticationService } from '../authentication/Authentication.service'
 @Injectable({ providedIn: 'root' })
 export class CartService {
   constructor() {}
+  showAlert = new EventEmitter<string>();
   cartItemsUpdated = new EventEmitter<Product[]>();
   showAlertUpdated = new EventEmitter<boolean>();
   theDeleteRequestItem = new BehaviorSubject<any>(null);
@@ -43,12 +44,12 @@ export class CartService {
 
   addToCard(item: Product): void {
     if (this.isExist(item.id)) {
-      alert('The item is already exist!');
+      this.addOneToTheQuantity(item);
       return;
     }
     this.cartItems.push(item);
     this.addCartInfo(item.price);
-    alert('ADDED ✔');
+    this.showAlert.emit('ADDED ✔');
   }
 
   deleteItemRequest(item: Product) {
@@ -113,5 +114,11 @@ export class CartService {
   checkOutCart() {
     this.resetCart();
     alert('Thank you for your order ❤');
+  }
+
+  onAddCoupon() {
+    const totalPrice = this.cartInfo.totalPrice;
+    const theSubstractedVal = totalPrice * 0.15;
+    this.cartInfo.totalPrice = totalPrice - theSubstractedVal;
   }
 }

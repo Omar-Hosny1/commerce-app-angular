@@ -29,16 +29,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private router: Router
   ) {}
   ngOnInit(): void {
-    this.isAuthenticated = this.isLoggedInFunc();
+    this.isAuthenticated = this.authService.isLoggedInFunc();
     this.authService.isAuth.subscribe(() => {
-      this.isAuthenticated = this.isLoggedInFunc();
+      this.isAuthenticated = this.authService.isLoggedInFunc();
     });
   }
 
-  isLoggedInFunc(): boolean {
-    const LS = localStorage.getItem('loggedin');
-    return LS == null || LS == '0' ? false : true;
-  }
+  // isLoggedInFunc(): boolean {
+  //   const LS = localStorage.getItem('loggedin');
+  //   return LS == null || LS == '0' ? false : true;
+  // }
 
   signOut() {
     this.authService.signOut();

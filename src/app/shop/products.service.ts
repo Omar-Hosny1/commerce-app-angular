@@ -1,7 +1,7 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, exhaustMap, map, take } from 'rxjs';
+import { BehaviorSubject, map, take } from 'rxjs';
 import { Product } from './products/product-item/product.model';
 import { Store } from '@ngrx/store';
 import * as HttpActions from './http-effects-store/http-effects.actions';
@@ -11,7 +11,6 @@ import { AuthenticationService } from '../authentication/Authentication.service'
 @Injectable({ providedIn: 'root' })
 export class ProductsService implements OnInit {
   constructor(
-    private authService: AuthenticationService,
     private router: Router,
     private http: HttpClient,
     private authService: AuthenticationService,

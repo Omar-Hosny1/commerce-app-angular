@@ -22,6 +22,7 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
 import { AlertComponent } from './cart/alert/alert.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { HTTPEffectsReducer } from './shop/http-effects-store/http-effects.reducer';
+import { AlertMessageComponent } from './shared/alert-message/alert-message.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { HTTPEffectsReducer } from './shop/http-effects-store/http-effects.reduc
     FilterPipe,
     AlertComponent,
     SpinnerComponent,
+    AlertMessageComponent,
   ],
   imports: [
     BrowserModule,
