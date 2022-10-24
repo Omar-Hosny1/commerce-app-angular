@@ -9,12 +9,9 @@
 ></app-alert-message>
 <div class="cart-components-height">
   <div class="cart-components-details">
-    <h1 class="cart-com-title">YOUR BAG</h1>
+    <h1 class="cart-com-title uppercase">Your Bag</h1>
     <span class="cart-com-total-amount">
-      <strong>Total Quantity :</strong> {{ cartInfo.totalQuantity }}
-    </span>
-    <span class="cart-com-total-price">
-      <strong>Total Price :</strong> {{ cartInfo.totalPrice }} EGP
+      Total Quantity : {{ cartInfo.totalQuantity }}
     </span>
   </div>
   <div class="cart-components">
@@ -53,9 +50,15 @@
         </div>
         <div class="total-price">
           <span>
-            <strong>Total Price</strong>
+            <strong>{{ isHasASale ? "Before Sale" : "Amount" }}</strong>
           </span>
-          <span>{{ cartInfo.totalPrice }} EGP</span>
+          <span>{{ cartInfo.totalPrice | fixed }} EGP</span>
+        </div>
+        <div class="total-price" *ngIf="isHasASale">
+          <span>
+            <strong>After Sale</strong>
+          </span>
+          <span>{{ cartInfo.totalPrice.toString() | sale | fixed }} EGP</span>
         </div>
         <button
           class="cancel"
@@ -75,7 +78,7 @@
           minlength="10"
           name="coupon"
           type="text"
-          class="w-[64%] border-black border-[1px] py-2 px-2 box-border"
+          class="w-[64%] mb-[30px] border-black border-[1px] py-2 px-2 box-border"
         />
       </form>
 

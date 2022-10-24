@@ -5,6 +5,7 @@
   min-height: calc(100vh - 150px);
   position: relative;
   margin-top: 20px;
+  margin-bottom: 5px;
   animation: productdetails 0.7s forwards cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .product-details-content {

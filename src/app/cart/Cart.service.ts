@@ -116,9 +116,9 @@ export class CartService {
     alert('Thank you for your order ❤');
   }
 
-  onAddCoupon() {
-    const totalPrice = this.cartInfo.totalPrice;
-    const theSubstractedVal = totalPrice * 0.15;
-    this.cartInfo.totalPrice = totalPrice - theSubstractedVal;
-  }
+  // onAddCoupon() {
+  //   const totalPrice = this.cartInfo.totalPrice;
+  //   const theSubstractedVal = totalPrice * 0.15;
+  //   this.cartInfo.totalPrice = totalPrice - theSubstractedVal;
+  // }
 }

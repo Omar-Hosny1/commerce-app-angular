@@ -19,6 +19,7 @@ export class CartComponent implements OnInit {
   showAlertMessage: boolean;
   message: string;
   isAValidCoupon: boolean = false;
+  isHasASale: boolean = false;
   constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit(): void {
@@ -53,7 +54,8 @@ export class CartComponent implements OnInit {
       this.cartService.showAlert.emit(
         'Congratulation you now have a 15% off 🎉'
       );
-      this.cartService.onAddCoupon();
+      // this.cartService.onAddCoupon();
+      this.isHasASale = true;
     } else {
       this.isAValidCoupon = true;
       setTimeout(() => {

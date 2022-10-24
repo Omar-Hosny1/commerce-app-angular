@@ -1,5 +1,5 @@
 .cart-components {
-  @apply flex justify-between my-[50px] mx-[100px] text-center;
+  @apply flex justify-between mt-[50px] mb-[15px] mx-[100px] text-center;
 }
 .order-section {
   @apply max-w-[320px];

@@ -19,13 +19,16 @@ import { CartItemComponent } from './cart/cart-item/cart-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
+import { FixedPipe } from './shared/pipes/fixed.pipe';
 import { AlertComponent } from './cart/alert/alert.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { HTTPEffectsReducer } from './shop/http-effects-store/http-effects.reducer';
 import { AlertMessageComponent } from './shared/alert-message/alert-message.component';
+import { SalePipe } from './shared/pipes/sale-price.pipe';
 
 @NgModule({
   declarations: [
+    SalePipe,
     AppComponent,
     HeaderComponent,
     HomeComponent,
@@ -39,6 +42,7 @@ import { AlertMessageComponent } from './shared/alert-message/alert-message.comp
     CartItemComponent,
     FooterComponent,
     FilterPipe,
+    FixedPipe,
     AlertComponent,
     SpinnerComponent,
     AlertMessageComponent,
