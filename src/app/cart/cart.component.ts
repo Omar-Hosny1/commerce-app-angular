@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { CartService } from './Cart.service';
 import { Product } from '../shop/products/product-item/product.model';
 import { NgForm } from '@angular/forms';
-import { faDownLeftAndUpRightToCenter } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cart',
@@ -19,6 +18,7 @@ export class CartComponent implements OnInit {
   showAlertMessage: boolean;
   message: string;
   isAValidCoupon: boolean = false;
+  showCongratulationMsg: boolean = false;
   isHasASale: boolean = false;
   constructor(private cartService: CartService, private router: Router) {}
 
@@ -42,6 +42,7 @@ export class CartComponent implements OnInit {
   }
 
   onCheckOut() {
+    this.showCongratulationMsg = true;
     this.cartService.checkOutCart();
   }
 
@@ -54,7 +55,6 @@ export class CartComponent implements OnInit {
       this.cartService.showAlert.emit(
         'Congratulation you now have a 15% off 🎉'
       );
-      // this.cartService.onAddCoupon();
       this.isHasASale = true;
     } else {
       this.isAValidCoupon = true;

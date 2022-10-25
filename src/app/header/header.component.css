@@ -112,3 +112,9 @@ li {
 .showNav {
   display: flex;
 }
+
+@media (max-width: 468px) {
+  .discount {
+    font-size: 12px;
+  }
+}

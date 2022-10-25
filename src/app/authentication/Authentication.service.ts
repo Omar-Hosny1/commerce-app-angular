@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 
 import { EventEmitter, Injectable, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { CartService } from '../cart/Cart.service';
 
 export interface AuthResponseData {
@@ -37,8 +37,7 @@ export class AuthenticationService implements OnInit {
 
   logIn(email: string, password: string) {
     return this.http.post<AuthResponseData>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' +
-        environment.apiKey,
+      environment.signInURL + environment.apiKey,
       {
         email,
         password,
@@ -49,8 +48,7 @@ export class AuthenticationService implements OnInit {
 
   signUp(email: string, password: string) {
     return this.http.post<AuthResponseData>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' +
-        environment.apiKey,
+      environment.signUpURL + environment.apiKey,
       {
         email,
         password,

@@ -14,40 +14,37 @@
 <div class="products-types-container">
   <h1 class="uppercase tracking-wider cursor-pointer">Categories</h1>
   <div class="products-types">
-    <div class="box">
+    <div
+      class="box cursor-pointer"
+      routerLink="shop"
+      [queryParams]="{ ARs: 'shoes' }"
+    >
       <img
         src="https://st-adidas-egy.mncdn.com/content/uploads/homepage/desktop-shoes-category-0920.jpg"
       />
-      <a
-        class="cursor-pointer tracking-wider"
-        routerLink="shop"
-        [queryParams]="{ ARs: 'shoes' }"
-        >SHOES</a
-      >
+      <a class="cursor-pointer tracking-wider">SHOES</a>
     </div>
-    <div class="box">
+    <div
+      class="box cursor-pointer"
+      routerLink="shop"
+      [queryParams]="{ ARs: 'clothes' }"
+    >
       <img
         src="https://st-adidas-egy.mncdn.com/content/uploads/homepage/desktop-cloth-category-0920.jpg"
       />
-      <a
-        routerLink="shop"
-        [queryParams]="{ ARs: 'clothes' }"
-        class="cursor-pointer tracking-wider"
-        >CLOTHING</a
-      >
+      <a class="cursor-pointer tracking-wider">CLOTHING</a>
     </div>
-    <div class="box">
+    <div
+      class="box cursor-pointer"
+      routerLink="shop"
+      [queryParams]="{ ARs: 'accessories' }"
+    >
       <img
         src="https://st-adidas-egy.mncdn.com/content/uploads/homepage/egy_mobile_categories/category_desktop_accessories.jpg"
       />
-      <a
-        routerLink="shop"
-        [queryParams]="{ ARs: 'accessories' }"
-        class="cursor-pointer tracking-wider"
-        >ACCESSORIES</a
-      >
+      <a class="cursor-pointer tracking-wider">ACCESSORIES</a>
     </div>
-    <div class="box">
+    <div class="box cursor-pointer">
       <img
         src="https://st-adidas-egy.mncdn.com/content/uploads/homepage/egy_mobile_categories/category_desktop_Best_Sellers.jpg"
       />
@@ -55,7 +52,6 @@
       <a routerLink="shop" class="cursor-pointer tracking-wider"
         >BEST SELLERS</a
       >
-      <!--[queryParams]="{ shoes: 1 }" -->
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="header-section">
   <header>
-    <h1>ADIDAS</h1>
+    <h1 class="font-semibold" routerLink="">ADIDAS</h1>
 
     <nav [ngClass]="{ showNav: showMenu }">
       <ul>
@@ -52,7 +52,7 @@
           <button
             *ngIf="isAuthenticated"
             (click)="signOut()"
-            class="bg-black text-white text-base px-2 py-1 rounded-sm uppercase"
+            class="bg-black text-white text-base px-2 py-1 rounded-sm uppercase text-sm md:text-base"
           >
             Sign Out
           </button>

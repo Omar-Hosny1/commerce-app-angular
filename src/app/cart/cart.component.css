@@ -41,7 +41,7 @@
   @apply text-center text-[30px] m-0 my-[40px];
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1110px) {
   .cart-components {
     @apply flex-col;
   }

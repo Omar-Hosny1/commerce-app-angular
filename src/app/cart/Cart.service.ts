@@ -113,12 +113,6 @@ export class CartService {
   }
   checkOutCart() {
     this.resetCart();
-    alert('Thank you for your order ❤');
+    // alert('Thank you for your order ❤');
   }
-
-  // onAddCoupon() {
-  //   const totalPrice = this.cartInfo.totalPrice;
-  //   const theSubstractedVal = totalPrice * 0.15;
-  //   this.cartInfo.totalPrice = totalPrice - theSubstractedVal;
-  // }
 }

@@ -33,7 +33,6 @@ export class ProductDetailsComponent implements OnInit {
   onAddToCart() {
     const isAuthenticated = this.authService.isLoggedInFunc();
     if (!isAuthenticated) {
-      alert('YOU NEED TO LOGIN FIRST');
       this.router.navigate(['auth']);
     } else {
       this.cartService.addToCard(this.productData);

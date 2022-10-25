@@ -5,7 +5,7 @@ import { BehaviorSubject, map, take } from 'rxjs';
 import { Product } from './products/product-item/product.model';
 import { Store } from '@ngrx/store';
 import * as HttpActions from './http-effects-store/http-effects.actions';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { AuthenticationService } from '../authentication/Authentication.service';
 
 @Injectable({ providedIn: 'root' })
