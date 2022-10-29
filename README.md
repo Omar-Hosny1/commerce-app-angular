@@ -1,6 +1,6 @@
 # CommerceApplication
-#### This Project Semulate Adidas Web Store and there are a lot of feauters that you can try it through this link \
-https://commerce-app-angular.web.app/
+#### This Project Semulate Adidas Web Store and there are a lot of feauters that you can try it through this link
+=> https://commerce-app-angular.web.app/
 
 
 ### TOOLS :
