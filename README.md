@@ -7,4 +7,4 @@ https://commerce-app-angular.web.app/
 1 - Angular JS .\
 2 - Firebase as a Backend .\
 3 - NGRX .\
-4 - Tailwind CSS .\
+4 - Tailwind CSS .
