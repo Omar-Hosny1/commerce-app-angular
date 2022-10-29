@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ProductsService } from '../shop/products.service';
-import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-authentication',
@@ -24,7 +23,7 @@ export class AuthenticationComponent implements OnInit {
   constructor(
     private authService: AuthenticationService,
     private productSr: ProductsService,
-    private router: Router // private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {

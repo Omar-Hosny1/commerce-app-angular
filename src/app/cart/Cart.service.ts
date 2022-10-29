@@ -1,7 +1,7 @@
 import { Product } from '../shop/products/product-item/product.model';
-import { EventEmitter, Injectable, OnInit } from '@angular/core';
-import { BehaviorSubject, take } from 'rxjs';
-import { AuthenticationService } from '../authentication/Authentication.service';
+import { EventEmitter, Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+
 @Injectable({ providedIn: 'root' })
 export class CartService {
   constructor() {}
@@ -61,6 +61,7 @@ export class CartService {
     this.cartInfo.totalItems--;
     this.cartInfo.totalQuantity -= item.quantity;
     this.cartInfo.totalPrice -= item.quantity * item.price;
+    item.quantity = 1;
     this.cartItems = this.cartItems.filter((ele) => ele.id !== item.id);
     this.cartItemsUpdated.emit(this.cartItems);
   }
@@ -113,6 +114,5 @@ export class CartService {
   }
   checkOutCart() {
     this.resetCart();
-    // alert('Thank you for your order ❤');
   }
 }

@@ -25,6 +25,7 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { HTTPEffectsReducer } from './shop/http-effects-store/http-effects.reducer';
 import { AlertMessageComponent } from './shared/alert-message/alert-message.component';
 import { SalePipe } from './shared/pipes/sale-price.pipe';
+import { SaleReducer } from './cart/Sale-Store/Sale.reducer';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,10 @@ import { SalePipe } from './shared/pipes/sale-price.pipe';
     FontAwesomeModule,
     FormsModule,
     HttpClientModule,
-    StoreModule.forRoot({ HttpEffects: HTTPEffectsReducer }),
+    StoreModule.forRoot({
+      HttpEffects: HTTPEffectsReducer,
+      SaleReducer: SaleReducer,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

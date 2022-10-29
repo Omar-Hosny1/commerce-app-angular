@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { CartService } from './Cart.service';
 import { Product } from '../shop/products/product-item/product.model';
 import { NgForm } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import * as SaleActions from '../cart/Sale-Store/Sale.actions';
 
 @Component({
   selector: 'app-cart',
@@ -20,9 +22,17 @@ export class CartComponent implements OnInit {
   isAValidCoupon: boolean = false;
   showCongratulationMsg: boolean = false;
   isHasASale: boolean = false;
-  constructor(private cartService: CartService, private router: Router) {}
+
+  constructor(
+    private cartService: CartService,
+    private router: Router,
+    private Store: Store<{ SaleReducer: { isHasASale: boolean } }>
+  ) {}
 
   ngOnInit(): void {
+    this.Store.select('SaleReducer').subscribe(
+      (isHasASale) => (this.isHasASale = !isHasASale)
+    );
     this.cartService.showAlert.subscribe((msg) => {
       this.showAlertMessage = true;
       this.message = msg;
@@ -55,7 +65,7 @@ export class CartComponent implements OnInit {
       this.cartService.showAlert.emit(
         'Congratulation you now have a 15% off 🎉'
       );
-      this.isHasASale = true;
+      this.Store.dispatch(new SaleActions.SetSale(true));
     } else {
       this.isAValidCoupon = true;
       setTimeout(() => {

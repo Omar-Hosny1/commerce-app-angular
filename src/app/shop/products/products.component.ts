@@ -1,9 +1,8 @@
-import { Component, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/shop/products.service';
 import { Product } from './product-item/product.model';
 import { Store } from '@ngrx/store';
-import { CartService } from 'src/app/cart/Cart.service';
 
 @Component({
   selector: 'app-products',
@@ -21,7 +20,6 @@ export class ProductsComponent implements OnInit {
   constructor(
     private productsService: ProductsService,
     private activatedRoute: ActivatedRoute,
-    private cartSR: CartService,
     private store: Store<{
       HttpEffects: { isFetching: boolean; isErrorHappend: boolean };
     }>
