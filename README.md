@@ -1,7 +1,5 @@
 # Adidas Clone E-commerce Website
 
-![Adidas Clone](insert_image_url_here) 
-
 ## Overview
 
 Adidas Clone is a sophisticated e-commerce website developed as a part of my internship at IBM. This project showcases my proficiency in using AngularJS, Firebase, NGRX for state management, and Tailwind CSS for responsive design. It offers a seamless shopping experience with a range of features.
