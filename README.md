@@ -1,8 +1,37 @@
-Adidas Clone (Angular JS + Firebase, NGRX, Tailwind) 🔴
+# Adidas Clone E-commerce Website
 
-This project is an e-commerce website (Adidas Clone) that I created during my internship at IBM 🕸
- 
-## Features 🔺: 
-Filter the products according to the categories (query params), Search for a specific product, Buy products and add them to your cart and also remove it, Responsive for all screen devices, Authentication using firebase (Login, Sign Out), Routes Protection (Secure), Hosting using firebase, Product details page that has details for every product, Ability to add coupons to get a 15% OFF, Calculate the total amount, total items, and total quantity in the cart and Styled alert when every important event happens (Remove item, Check out Alert, ... ).
+![Adidas Clone](insert_image_url_here) 
 
-live: https://lnkd.in/d7PGkAVU
+## Overview
+
+Adidas Clone is a sophisticated e-commerce website developed as a part of my internship at IBM. This project showcases my proficiency in using AngularJS, Firebase, NGRX for state management, and Tailwind CSS for responsive design. It offers a seamless shopping experience with a range of features.
+
+## Key Features
+
+🔺 **Product Filtering**: Easily filter products based on categories using query parameters.
+
+🔍 **Product Search**: Quickly find specific products through the search functionality.
+
+🛒 **Shopping Cart**: Add products to your cart, manage items, and remove them as needed.
+
+📱 **Responsive Design**: The website is optimized for a seamless experience on all screen sizes and devices.
+
+🔐 **Authentication**: Utilizes Firebase for secure user authentication, including login and sign-out functionality.
+
+🛡️ **Route Protection**: Ensures secure access to routes, protecting sensitive information.
+
+🌐 **Firebase Hosting**: The website is hosted using Firebase, ensuring reliability and scalability.
+
+📦 **Product Details**: Comprehensive product details pages provide information on each item.
+
+💰 **Coupon Codes**: Apply coupons to receive a 15% discount on your purchases.
+
+💲 **Shopping Cart Summary**: Easily view the total amount, total items, and total quantity in your cart.
+
+🚀 **Alerts**: Stylishly designed alerts notify users of important events, such as item removal and checkout confirmation.
+
+## Live Demo
+
+Explore the live demo of the Adidas Clone e-commerce website: [Adidas Clone Demo](https://lnkd.in/d7PGkAVU)
+
+Feel free to browse and experience the features and functionality of this project. Thank you for your interest!
