@@ -30,6 +30,6 @@ Adidas Clone is a sophisticated e-commerce website developed as a part of my int
 
 ## Live Demo
 
-Explore the live demo of the Adidas Clone e-commerce website: [Adidas Clone Demo](https://lnkd.in/d7PGkAVU)
+Explore the live demo of the Adidas Clone e-commerce website: [Adidas Clone Demo](https://commerce-app-angular.web.app/)
 
 Feel free to browse and experience the features and functionality of this project. Thank you for your interest!
